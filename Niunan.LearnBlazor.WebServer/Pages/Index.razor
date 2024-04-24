@@ -1,0 +1,471 @@
+﻿@page "/"
+@using LearnBlazorDto.Models;
+@using LearnBlazorRepository.Repository.Interface;
+@using LearnBlazorServerMediator.CategoryMediator
+@using LearnBlazorServerMediator.ProductMediator
+@using MediatR
+@inject IProductRepository _product
+@inject ICategoryRepository _category
+@inject IMessageService _message
+@inject IWebHostEnvironment Environment
+@inject NavigationManager _navManager
+@inject IMediator _mediator;
+<Layout Style="min-height: 100vh; ">
+    <Header Class="header">
+        <div class="niunanlogo">
+            牛腩商品库
+        </div>
+        @if (isLogin)
+        {
+            <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal">
+                <MenuItem Key="1" @onclick="Add">新增商品</MenuItem>
+                <MenuItem Key="3" @onclick="@(()=>{_navManager.NavigateTo("/category");})">分类管理</MenuItem>
+                <MenuItem Key="2" @onclick="@(()=>{isLogin = false;})">退出登录</MenuItem>
+            </Menu>
+        }
+        else
+        {
+
+            <Button Type="primary" OnClick="@(()=>{ loginWinVisible = true; })">登录</Button>
+        }
+    </Header>
+    <Layout>
+        <Sider Width="250" Class="site-layout-background">
+            <Tree DefaultExpandAll
+                  DataSource="calist"
+                  OnSelect="OnSelect"
+                  TitleExpression="x => GetTreeTitle(x.DataItem)"
+                  ChildrenExpression="x => x.DataItem.Items"
+                  KeyExpression="x => x.DataItem.CategoryId.ToString()"
+                  TItem="Category">
+
+            </Tree>
+        </Sider>
+        <Layout Style=" padding: 0 24px 24px;">
+
+            <GridRow>
+                <GridCol Span="16">
+                    <Breadcrumb Style="margin: 16px 0;">
+                        @foreach (var item in mbxlist)
+                        {
+                            <BreadcrumbItem>@item</BreadcrumbItem>
+                        }
+
+                    </Breadcrumb>
+                </GridCol>
+                <GridCol Span="8">
+                    <Search @bind-Value="@searchKey" OnSearch="SearchPro" Placeholder="请输入要查询的商品名称关键字" WrapperStyle="margin-top:10px;" AllowClear />
+
+                </GridCol>
+            </GridRow>
+
+
+            <Content Class="site-layout-background" Style=" padding: 24px; margin: 0; min-height: 280px;">
+                <GridRow Gutter="(16, 16)">
+
+                    @foreach (var item in Data)
+                    {
+                        <GridCol Span="6">
+                            <Card Bordered="false" Title=@(item.ProductName)>
+                                <Extra>
+                                    @if (isLogin)
+                                    {
+                                        <Button @onclick="()=>Edit(item.ProductId)" Size="small" Type="@ButtonType.Primary" Icon="@IconType.Outline.Edit">编辑</Button>
+
+                                        <Popconfirm Title="是否确认删除?" Placement="@Placement.Right"
+                                                    OnConfirm="()=>DeletePro(item.ProductId)">
+                                            <Button Danger Size="small" Type="@ButtonType.Primary" Icon="@IconType.Outline.Delete">删除</Button>
+                                        </Popconfirm>
+                                    }
+                                </Extra>
+                                <Body>
+                                    <Image PreviewVisible="false" OnClick="_=>openDetailWin(item.ProductId)" Src="@("/images/"+item.ThumbnailImage)"></Image>
+                                </Body>
+                            </Card>
+                        </GridCol>
+                    }
+
+                </GridRow>
+                <GridRow>
+                    <GridCol Span="24">
+                        <Pagination OnChange="ChangePage" PageIndex="@pageIndex" PageSize="@pageSize" Total="@total"></Pagination>
+                    </GridCol>
+                </GridRow>
+            </Content>
+        </Layout>
+    </Layout>
+</Layout>
+
+<Drawer Closable="true" Visible="visible" Width="400" Placement="right" Title='@btnText' OnClose="_=>close()">
+    <Form Model="@model" OnFinish="HandleSubmit">
+        <FormItem Label="商品名称">
+            <Input @bind-Value="@context.ProductName" />
+        </FormItem>
+        <FormItem Label="条码">
+            <Input @bind-Value="@context.Code" />
+        </FormItem>
+        <FormItem Label="品牌">
+            <Input @bind-Value="@context.BrandName" />
+        </FormItem>
+        <FormItem Label="商品图片">
+            <InputFile id="fileInput" OnChange="UploadFiles" hidden multiple />
+
+            <Upload Name="files" FileList="fileList">
+                <label class="ant-btn" for="fileInput">
+                    <Icon Type="upload" />
+                    选择图片
+                </label>
+            </Upload>
+        </FormItem>
+        <FormItem Label="商品分类">
+            <TreeSelect TItem="Category"
+                        Style="width:100%;"
+                        DataSource="calist"
+            @bind-Value="@selCaId"
+                        Placeholder="请选择"
+                        AllowClear
+                        TreeDefaultExpandAll
+                        ChildrenExpression="node=>node.DataItem.Items"
+                        TitleExpression="node=>node.DataItem.CategoryName"
+                        KeyExpression="node=>node.DataItem.CategoryId.ToString()"
+                        IsLeafExpression="node=>node.DataItem.Items.Count() == 0">
+            </TreeSelect>
+        </FormItem>
+        <FormItem Label="单位">
+            <Input @bind-Value="@context.Unit" />
+        </FormItem>
+        <FormItem Label="单价">
+            <Input @bind-Value="@context.UnitPrice" />
+        </FormItem>
+        <FormItem Label="使用感受">
+            <TextArea Rows="4" @bind-Value="@context.UseFeel" />
+        </FormItem>
+        <Button Type="@ButtonType.Primary" HtmlType="submit">@btnText</Button>
+
+    </Form>
+</Drawer>
+
+
+<Modal Title="登录"
+       Visible="@loginWinVisible"
+       OnOk="@Login"
+       OnCancel="@(()=>{loginWinVisible = false;})">
+    <p>
+        <Input Placeholder="请输入您的用户名" @bind-Value="@loginName" />
+    </p>
+    <p>
+        <InputPassword Placeholder="请输入您的登录密码" @bind-Value="@loginPassword" />
+    </p>
+
+</Modal>
+
+<Modal Title="商品详情" Footer="null" MaxBodyHeight="@("80vh")" Width="@("80vw")"
+       Visible="@detailWinVisible" OnCancel="@(()=>{detailWinVisible = false;})">
+    <Descriptions Title="@detailModel.ProductName">
+        <DescriptionsItem Title="Id">@detailModel.ProductId</DescriptionsItem>
+        <DescriptionsItem Title="条码">@detailModel.Code</DescriptionsItem>
+        <DescriptionsItem Title="分类">@detailModel.Category.CategoryName</DescriptionsItem>
+        <DescriptionsItem Title="品牌">@detailModel.BrandName</DescriptionsItem>
+        <DescriptionsItem Title="单位">
+           @detailModel.Unit
+        </DescriptionsItem>
+        <DescriptionsItem Title="单价">
+           ￥ @detailModel.UnitPrice
+        </DescriptionsItem>
+        <DescriptionsItem Title="使用感受">
+           @detailModel.UseFeel
+        </DescriptionsItem>
+        <DescriptionsItem Title="创建时间">
+            @detailModel.CreatedTime.ToString("yyyy-MM-dd HH:mm")
+        </DescriptionsItem>
+        <DescriptionsItem Title="最后更新时间">
+            @detailModel.LastUpdateTime.ToString("yyyy-MM-dd HH:mm")
+        </DescriptionsItem>
+    </Descriptions>
+
+    <ImagePreviewGroup>
+        @foreach (var item in detailModel.Images)
+        {
+            <Image Width="200" Src="@("/images/"+@item.Title)" />
+        }
+     
+    </ImagePreviewGroup>
+</Modal>
+<Button OnClick="@aa"></Button>
+@code {
+
+    private void aa()
+    {
+    }
+
+
+
+    //商品图片列表设置，每行都是4个
+    private ListGridType grid = new()
+        {
+            Gutter = 16,
+            Xs = 4,
+            Sm = 4,
+            Md = 4,
+            Lg = 4,
+            Xl = 4,
+            Xxl = 4,
+        };
+    //商品列表
+    public List<Product> Data = new List<Product>();
+    //页面加载完成后
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        BindTree();
+        BindData();
+
+    }
+    //绑定树
+    private void BindTree()
+    {
+        List<Category> templist = _mediator.Send(new CategoryGetTreeModel()).Result; 
+        List<Category> alllist = new List<Category>()
+        {
+            new Category(){  CategoryId=0,CategoryName = "全部商品", CategoryPath="", Items = templist}    
+        }; 
+        calist = alllist;
+    }
+    //查询商品和分类绑定到Data和calist上
+    private void BindData()
+    {
+        total = _mediator.Send(new ProductCalcCountPage(searchKey, searchSelCaId)).Result;
+        Data = _mediator.Send(new ProductGetListPage(searchKey, searchSelCaId, pageSize, pageIndex)).Result;
+    }
+
+    #region 商品详情
+    private bool detailWinVisible = false;
+    private Product detailModel = new Product();
+    private void openDetailWin(int proid)
+    {
+        detailModel = _mediator.Send(new ProductGetModel(proid)).Result;
+        detailWinVisible = true;    
+    }
+    #endregion
+
+    #region 分页
+    private int pageIndex = 1; //当前第几页
+    private int pageSize = 8; //每页显示几条记录
+    private int total = 0; //总记录
+    private void ChangePage(PaginationEventArgs args)
+    {
+        pageIndex = args.Page;
+        pageSize = args.PageSize;
+        BindData();
+    }
+    #endregion
+
+    #region 登录，退出登录
+    //是否登录
+    private bool isLogin = true;
+    private bool loginWinVisible = false; //是否显示登录框
+    private string loginName = ""; //登录名
+    private string loginPassword = ""; //登录密码
+                                       //登录方法
+    private void Login()
+    {
+        if (loginName == "niunan" && loginPassword == "123456")
+        {
+            isLogin = true;
+            loginWinVisible = false;
+        }
+        else
+        {
+            _message.Error("用户名或者密码出错！");
+        }
+    }
+    #endregion
+
+    #region 分类树
+    //当前选择的分类ID，默认是0
+    private int searchSelCaId = 0;
+    //面包屑
+    private List<string> mbxlist = new List<string>() { "全部商品" };
+    //商品分类
+    private List<Category> calist;
+    //选择树节点
+    void OnSelect(TreeEventArgs<Category> args)
+    {
+        pageIndex = 1;
+        Category selCa = args.Node.DataItem;
+        Console.WriteLine($"OnSelect {selCa.CategoryId}, {selCa.CategoryName}");
+        searchSelCaId = selCa.CategoryId;
+        mbxlist = _mediator.Send(new CategoryGetMBXList(selCa.CategoryId)).Result;
+        BindData();
+    }
+    //节点显示商品数
+    private string GetTreeTitle(Category ca)
+    {
+        return ca.CategoryName + "(商品数：" + _mediator.Send(new ProductCalcCount(ca.CategoryId)).Result + ")";
+    }
+    #endregion
+
+    #region 商品查询
+    private string searchKey = "";
+    private void SearchPro()
+    {
+        Console.WriteLine("查询关键字：" + searchKey);
+        mbxlist = new List<string>() { "查询结果" };
+        BindData();
+    }
+    #endregion
+
+    #region 商品增，删，改
+    //商品图片列表 antdesign的upload组件
+    List<UploadFileItem> fileList = new List<UploadFileItem>();
+    //商品图片列表 原生的上传组件
+    IList<IBrowserFile> files = new List<IBrowserFile>();
+    private long maxFileSize = 1024 * 1024 * 15; //上传图片大小限制
+    private int maxAllowedFiles = 3; //允许选择的图片数
+
+    private string selCaId = ""; //选择的商品分类ID
+    private string btnText = "新增";
+    //新增编辑所需要的模型
+    private Product model = new();
+    //用于抽屉的显示隐藏
+    bool visible = false;
+    //选择图片上传
+    private async Task UploadFiles(InputFileChangeEventArgs e)
+    {
+        foreach (var file in e.GetMultipleFiles())
+        {
+            try
+            {
+                files.Add(file);
+
+                var trustedFileNameForFileStorage = Guid.NewGuid().ToString().Substring(0, 6) + ".jpg";
+                var path = Path.Combine(Environment.ContentRootPath,
+                        "wwwroot", "images",
+                        trustedFileNameForFileStorage);
+
+                await using FileStream fs = new(path, FileMode.Create);
+                await file.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+                fileList.Add(new UploadFileItem() { FileName = trustedFileNameForFileStorage, Size = file.Size });
+            }
+            catch (Exception ex)
+            {
+                _message.Error("上传图片出错：" + ex.Message);
+            }
+
+        }
+
+    }
+
+    //关闭抽屉
+    void close()
+    {
+        this.visible = false;
+    }
+    //新增、编辑商品
+    private  void HandleSubmit()
+    {
+        Console.WriteLine("提交了，名称：" + model.ProductName);
+        string res = "";
+        int x = 0;
+        if (int.TryParse(selCaId, out x))
+        {
+            model.CategoryId = x;
+        }
+        if (fileList.Count > 0)
+        {
+            model.ThumbnailImage = fileList[0].FileName;
+            model.Images = new List<ProductImage>();
+            foreach (var item in fileList)
+            {
+                model.Images.Add(new ProductImage() { Title = item.FileName });
+            }
+        }
+        if (model.ProductId != 0)
+        {
+            //编辑
+            model.LastUpdateTime = DateTime.Now;
+            _mediator.Send(new ProductUpdate(model));
+            res = "编辑成功!!!";
+        }
+        else
+        {
+            //新增
+            model.CreatedTime = DateTime.Now;
+            model.LastUpdateTime = DateTime.Now;
+
+            _mediator.Send(new ProductAdd(model));
+            //_mediator.Send(new ProductAdd(_product,model));
+
+
+            res = "新增成功!!!";
+
+        }
+        model = new Product();
+        _message.Info(res);
+        this.close();
+        BindData();
+    }
+    //点击新增按钮
+    private void Add()
+    {
+        btnText = "新增";
+        model = new Product() { CategoryId = 0, ProductName = "", ThumbnailImage = "" };
+        this.visible = true;
+        selCaId = "";
+        fileList.Clear();
+    }
+    //点击编辑按钮
+    private void Edit(int proid)
+    {
+        model = _mediator.Send(new ProductGetModel(proid)).Result;
+        btnText = "编辑";
+        this.visible = true;
+        selCaId = model.CategoryId.ToString();
+        fileList.Clear();
+        foreach (var item in model.Images)
+        {
+            fileList.Add(new UploadFileItem() { FileName = item.Title });
+        } 
+    }
+
+    //删除商品
+    private void DeletePro(int proid)
+    {
+        _mediator.Send(new ProductDelete(proid));
+        BindData();
+    }
+
+    #endregion
+}
+
+<style>
+    #components-layout-demo-top-side-2 .logo {
+        width: 120px;
+        height: 31px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 28px 16px 0;
+        float: left;
+    }
+
+    .site-layout-background {
+        background: #fff;
+    }
+
+    .niunanlogo {
+        color: white;
+        font-size: 22px;
+        width: 200px;
+        float: left;
+        font-weight: bold;
+    }
+
+    .oneimg {
+        /*        max-width: 400px;*/
+    }
+
+    .ant-btn .anticon {
+        margin-top: -8px;
+        vertical-align: middle;
+    }
+</style>

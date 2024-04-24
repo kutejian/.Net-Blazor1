@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Niunan.LearnBlazor.WebServer.props" />
+</Project>

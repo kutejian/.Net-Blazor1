@@ -1,0 +1,214 @@
+﻿@page "/category"
+@using LearnBlazorDto.Models;
+@using LearnBlazorRepository.Repository.Interface;
+@using LearnBlazorServerMediator.CategoryMediator
+@using LearnBlazorServerMediator.ProductMediator
+@using MediatR
+@inject ICategoryRepository _category
+@inject IProductRepository _product
+@inject IMessageService _message
+@inject IMediator _mediator;
+
+<Layout Style="min-height: 100vh; ">
+    <Sider Width="250" Style="background-color:white;">
+        <h3>分类管理</h3>
+        <Tree DefaultExpandAll Draggable OnDragEnd="e=> { }" OnDrop="onDrop"
+              DataSource="calist"
+              OnSelect="OnSelect"
+              TitleExpression="x => GetTreeTitle(x.DataItem)"
+              ChildrenExpression="x => x.DataItem.Items"
+              KeyExpression="x => x.DataItem.CategoryId.ToString()"
+              TItem="Category">
+
+        </Tree>
+    </Sider>
+    <Layout Class="site-layout" Style="padding:10px;">
+        <Space Direction="DirectionVHType.Vertical">
+    <SpaceItem>
+                <Card Title="新增"> 
+                    <Body>
+                        <Form Model="@addModel" OnFinish="SubAdd">
+                            <FormItem Label="分类名称">
+                                <Input @bind-Value="@context.CategoryName" />
+                            </FormItem> 
+                            <FormItem Label="父级分类">
+                                <TreeSelect TItem="Category" 
+                                            Style="width:100%;"
+                                            DataSource="calist"
+                                            @bind-Value="@addPId"
+                                            Placeholder="请选择"
+                                                AllowClear
+                                                TreeDefaultExpandAll
+                                            ChildrenExpression="node=>node.DataItem.Items"
+                                            TitleExpression="node=>node.DataItem.CategoryName"
+                                            KeyExpression="node=>node.DataItem.CategoryId.ToString()"
+                                            IsLeafExpression="node=>node.DataItem.Items.Count() == 0">
+                                </TreeSelect>
+                            </FormItem>
+                            <Button Type="@ButtonType.Primary" HtmlType="submit" Icon="@IconType.Outline.Plus">新增</Button>
+
+                        </Form>
+                    </Body>
+
+                </Card>
+    </SpaceItem>
+    <SpaceItem>
+                <Card Title="编辑"> 
+                    <Body>
+                        <p><Input Placeholder="分类名称" @bind-Value="@editModel.CategoryName"></Input></p>
+                        <p><Input Placeholder="排序号" @bind-Value="@editModel.Sort"></Input></p>
+                        <p><Button Type="primary" OnClick="SubEdit" Icon="@IconType.Outline.Edit">编辑</Button></p>
+                    </Body>
+
+                </Card>
+    </SpaceItem>
+    <SpaceItem>
+                <Card Title="删除"> 
+                    <Body>
+                        <p>待删除的分类:   @delModel.CategoryName</p> 
+                        <p>
+                            <Popconfirm Title="是否确认删除?" Placement="@Placement.Right"
+                                        OnConfirm="SubDelete">
+                                <Button Danger   Type="@ButtonType.Primary" Icon="@IconType.Outline.Delete">删除</Button>
+                            </Popconfirm>
+                        </p>
+                    </Body>
+
+                </Card>
+    </SpaceItem>
+    </Space>
+      
+       
+       
+    </Layout>
+</Layout>
+@code{
+
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        BindData();
+    }
+
+
+    private void BindData()
+    {
+        calist = _mediator.Send(new CategoryGetTreeModel()).Result; 
+    }
+
+    #region 分类树
+    //商品分类
+    private List<Category> calist;
+    //选择树节点
+    void OnSelect(TreeEventArgs<Category> args)
+    {
+
+        Category selCa = args.Node.DataItem;
+        Console.WriteLine($"OnSelect {selCa.CategoryId}, {selCa.CategoryName}");
+        editModel = selCa;
+        delModel = selCa;
+
+    }
+    //节点显示商品数
+    private string GetTreeTitle(Category ca)
+    {
+        return ca.CategoryName + "(商品数：" + _mediator.Send(new ProductCalcCount(ca.CategoryId)).Result + ")";
+    }
+    //拖拽
+    void onDrop(TreeEventArgs<Category> e)
+    {
+        Category nowCa = e.Node.DataItem;
+        Category targetCa = e.TargetNode.DataItem;
+        if (e.DropBelow == true)
+        {
+            //同一级,下方
+            nowCa.ParentId = targetCa.ParentId;
+            nowCa.Sort = targetCa.Sort + 1;
+            nowCa.CategoryPath = targetCa.CategoryPath;
+        }
+        else
+        {
+            //下一级  
+            nowCa.ParentId = targetCa.CategoryId;
+            nowCa.Sort = 0;
+            nowCa.CategoryPath = targetCa.CategoryPath + targetCa.CategoryId + ",";
+        }
+        var DeResult = _mediator.Send(new CategoryUpdate(nowCa)).Result;
+        _message.Info(DeResult);
+
+        BindData();
+    }
+    #endregion
+
+    #region 新增
+    private Category addModel = new Category(); // 新增的模型
+    private string addPId = ""; //新增时的所选父级ID
+    private void SubAdd()
+    {
+        addModel.ParentId = string.IsNullOrEmpty(addPId) ? 0 : int.Parse(addPId);
+        if (addModel.ParentId == 0)
+        {
+            //顶级
+            addModel.CategoryPath = "";
+        }else
+        {
+            Category pca = _mediator.Send(new CategoryGetModel(addModel.ParentId)).Result;
+            addModel.CategoryPath = pca.CategoryPath + pca.CategoryId + ",";
+        }
+        //_category.Add(addModel);
+        var Addresult = _mediator.Send(new CategoryAdd(addModel)).Result;
+        if (Addresult=="成功")
+        {
+            addModel = new Category();
+            BindData();
+        }
+        _message.Info(Addresult);
+    }
+    #endregion
+
+    #region 编辑名称
+    private Category editModel = new Category();
+    private void SubEdit()
+    {
+        Category src_ca = _mediator.Send(new CategoryGetModel(editModel.CategoryId)).Result;
+        src_ca.CategoryName = editModel.CategoryName;
+        src_ca.Sort = editModel.Sort;
+        var DeResult = _mediator.Send(new CategoryUpdate(src_ca)).Result;
+        _message.Info(DeResult);
+        editModel = new Category();
+        BindData();
+    }
+    #endregion
+
+    #region 删除
+    private Category delModel = new Category();
+    private void SubDelete()
+    {
+        try
+        {
+            var DeResult= _mediator.Send(new CategoryDelete(delModel.CategoryId)).Result;
+            delModel = new Category();
+            _message.Info(DeResult);
+            BindData();
+        }
+        catch (Exception ex)
+        {
+            _message.Error("删除分类出错:"+ex.Message);
+        }
+           
+    }
+    #endregion
+}
+
+<style>
+    #components-layout-demo-side .logo {
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px;
+    }
+
+    .site-layout .site-layout-background {
+        background: #fff;
+    }
+</style>
