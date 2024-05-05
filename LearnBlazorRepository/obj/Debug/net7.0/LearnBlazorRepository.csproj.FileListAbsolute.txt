@@ -33,3 +33,4 @@ C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorRepository\obj\Debug\net7.
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorRepository\obj\Debug\net7.0\refint\LearnBlazorRepository.dll
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorRepository\obj\Debug\net7.0\LearnBlazorRepository.pdb
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorRepository\obj\Debug\net7.0\ref\LearnBlazorRepository.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorRepository\obj\Debug\net7.0\LearnBlazorRepository.sourcelink.json

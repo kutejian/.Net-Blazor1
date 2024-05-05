@@ -1,0 +1,41 @@
+﻿@if (ShowModal)
+{
+    <!-- 模态框的 HTML 结构 -->
+    <div class="modal" tabindex="-1" role="dialog" style="display:block;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">错误</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="CloseModal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>@Message</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="CloseModal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Message { get; set; } = "发生了未知错误。";
+
+    public bool ShowModal { get; private set; }
+
+    public void Show()
+    {
+        ShowModal = true;
+        StateHasChanged();
+    }
+
+    private void CloseModal()
+    {
+        ShowModal = false;
+        StateHasChanged();
+    }
+}

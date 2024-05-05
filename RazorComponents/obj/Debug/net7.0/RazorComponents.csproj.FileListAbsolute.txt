@@ -47,3 +47,4 @@ C:\Users\Administrator\Desktop\.Net Blazor\RazorComponents\obj\Debug\net7.0\Razo
 C:\Users\Administrator\Desktop\.Net Blazor\RazorComponents\obj\Debug\net7.0\refint\RazorComponents.dll
 C:\Users\Administrator\Desktop\.Net Blazor\RazorComponents\obj\Debug\net7.0\RazorComponents.pdb
 C:\Users\Administrator\Desktop\.Net Blazor\RazorComponents\obj\Debug\net7.0\ref\RazorComponents.dll
+C:\Users\Administrator\Desktop\.Net Blazor\RazorComponents\obj\Debug\net7.0\RazorComponents.sourcelink.json

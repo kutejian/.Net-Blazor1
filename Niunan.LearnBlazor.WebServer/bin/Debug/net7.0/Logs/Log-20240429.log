@@ -1,0 +1,329 @@
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+warn: Microsoft.AspNetCore.Components.Web.ErrorBoundary[100]
+      => ConnectionId:0HN37KCKTMJ04 => RequestPath:/_blazor RequestId:0HN37KCKTMJ04:00000001 => TransportConnectionId:de7lVlCQ0gqi8MquGka0Eg
+      Unhandled exception rendering component: 11
+General Information 
+*********************************************
+Additional Info
+TimeStamp: 2024/4/29 0:49:58
+MachineName: DESKTOP-90FL9T6
+AppDomainName: Niunan.LearnBlazor.WebServer
+OS: Microsoft Windows 10.0.19043
+Framework: .NET 7.0.18
+UserName: Administrator
+EnvironmentName: Development
+VSIDE: Microsoft Visual Studio Community 2022 17.0
+
+1) Exception Information
+---------------------------------------------
+Exception Type: System.NotImplementedException
+TargetSite: System.Threading.Tasks.Task`1[LearnBlazorServerMediator.CategoryMediator.CategoryOperationResponse] Handle(LearnBlazorServerMediator.CategoryMediator.CategoryAdd, System.Threading.CancellationToken)
+Message: 11
+Data: System.Collections.ListDictionaryInternal
+HelpLink: 
+Source: LearnBlazorServerMediator
+HResult: -2147467263
+
+StackTrace Information
+*********************************************
+   at LearnBlazorServerMediator.CategoryMediator.CategoryHandlerAdd.Handle(CategoryAdd request, CancellationToken cancellationToken) in C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\CategoryMediator\CategoryHandlerSylloge.cs:line 23
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at Niunan.LearnBlazor.WebServer.Data.CategoryData.CategoryDataAdd(Category category) in C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\Data\CategoryData.cs:line 18
+   at Niunan.LearnBlazor.WebServer.Pages.ViewCategory.SubAdd() in C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\Pages\ViewCategory.razor:line 163
+   at Microsoft.AspNetCore.Components.EventCallbackWorkItem.InvokeAsync[T](MulticastDelegate delegate, T arg)
+   at Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, Object arg)
+   at AntDesign.Form`1.OnValidSubmit(EditContext editContext)
+   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task)
+   at Microsoft.AspNetCore.Components.Forms.EditForm.HandleSubmitAsync()
+   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task)
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+
+
+
+warn: Microsoft.AspNetCore.Components.Web.ErrorBoundary[100]
+      => ConnectionId:0HN37KCKTMJ04 => RequestPath:/_blazor RequestId:0HN37KCKTMJ04:00000001 => TransportConnectionId:de7lVlCQ0gqi8MquGka0Eg
+      Unhandled exception rendering component: 11
+General Information 
+*********************************************
+Additional Info
+TimeStamp: 2024/4/29 0:50:29
+MachineName: DESKTOP-90FL9T6
+AppDomainName: Niunan.LearnBlazor.WebServer
+OS: Microsoft Windows 10.0.19043
+Framework: .NET 7.0.18
+UserName: Administrator
+EnvironmentName: Development
+VSIDE: Microsoft Visual Studio Community 2022 17.0
+
+1) Exception Information
+---------------------------------------------
+Exception Type: System.NotImplementedException
+TargetSite: System.Threading.Tasks.Task`1[LearnBlazorServerMediator.CategoryMediator.CategoryOperationResponse] Handle(LearnBlazorServerMediator.CategoryMediator.CategoryAdd, System.Threading.CancellationToken)
+Message: 11
+Data: System.Collections.ListDictionaryInternal
+HelpLink: 
+Source: LearnBlazorServerMediator
+HResult: -2147467263
+
+StackTrace Information
+*********************************************
+   at LearnBlazorServerMediator.CategoryMediator.CategoryHandlerAdd.Handle(CategoryAdd request, CancellationToken cancellationToken)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at Niunan.LearnBlazor.WebServer.Data.CategoryData.CategoryDataAdd(Category category) in C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\Data\CategoryData.cs:line 18
+   at Niunan.LearnBlazor.WebServer.Pages.ViewCategory.SubAdd() in C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\Pages\ViewCategory.razor:line 163
+   at Microsoft.AspNetCore.Components.EventCallbackWorkItem.InvokeAsync[T](MulticastDelegate delegate, T arg)
+   at Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, Object arg)
+   at AntDesign.Form`1.OnValidSubmit(EditContext editContext)
+   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task)
+   at Microsoft.AspNetCore.Components.Forms.EditForm.HandleSubmitAsync()
+   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task)
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+
+
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+warn: Microsoft.AspNetCore.Components.Web.ErrorBoundary[100]
+      => ConnectionId:0HN37KS1CK8A6 => RequestPath:/_blazor RequestId:0HN37KS1CK8A6:00000001 => TransportConnectionId:2pfRv4PqlmMg0pi_JIifUA
+      Unhandled exception rendering component: Object reference not set to an instance of an object.
+General Information 
+*********************************************
+Additional Info
+TimeStamp: 2024/4/29 1:17:29
+MachineName: DESKTOP-90FL9T6
+AppDomainName: Niunan.LearnBlazor.WebServer
+OS: Microsoft Windows 10.0.19043
+Framework: .NET 7.0.18
+UserName: Administrator
+EnvironmentName: Development
+VSIDE: Microsoft Visual Studio Community 2022 17.0
+
+1) Exception Information
+---------------------------------------------
+Exception Type: System.NullReferenceException
+TargetSite: Void SubEdit()
+Message: Object reference not set to an instance of an object.
+Data: System.Collections.ListDictionaryInternal
+HelpLink: 
+Source: Niunan.LearnBlazor.WebServer
+HResult: -2147467261
+
+StackTrace Information
+*********************************************
+   at Niunan.LearnBlazor.WebServer.Pages.ViewCategory.SubEdit() in C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\Pages\ViewCategory.razor:line 191
+   at Microsoft.AspNetCore.Components.EventCallbackWorkItem.InvokeAsync[T](MulticastDelegate delegate, T arg)
+   at Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, Object arg)
+   at AntDesign.Button.HandleOnClick(MouseEventArgs args)
+   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task)
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+
+
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5229
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
+

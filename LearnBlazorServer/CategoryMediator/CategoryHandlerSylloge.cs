@@ -7,30 +7,31 @@ namespace LearnBlazorServerMediator.CategoryMediator
 {
     //添加产品
 
-    public class CategoryHandlerAdd : IRequestHandler<CategoryAdd, string>
+    public class CategoryHandlerAdd : IRequestHandler<CategoryAdd, CategoryOperationResponse>
     {
         private readonly ICategoryRepository _categoryRepository;
-        private readonly FluentValidator<Category> _fluentValidator;
+        private readonly FluentValidatorCategory<Category> _fluentValidator;
 
-        public CategoryHandlerAdd(ICategoryRepository categoryRepository, FluentValidator<Category> fluentValidator)
+        public CategoryHandlerAdd(ICategoryRepository categoryRepository, FluentValidatorCategory<Category> fluentValidator)
         {
             _categoryRepository = categoryRepository;
             _fluentValidator = fluentValidator;
         }
 
-        public Task<string> Handle(CategoryAdd request, CancellationToken cancellationToken)
+        public Task<CategoryOperationResponse> Handle(CategoryAdd request, CancellationToken cancellationToken)
         {
             var result = _fluentValidator.ValidatorUtility(request._category).Result;
-            if (result == "")
+            if (result.Result)
             {
                 _categoryRepository.Add(request._category);
-                return Task.FromResult("成功");
             }
+
             return Task.FromResult(result);
         }
-    }
 
-    public class CategoryHandlerDelete : IRequestHandler<CategoryDelete, string>
+    }
+    //删除
+    public class CategoryHandlerDelete : IRequestHandler<CategoryDelete, CategoryOperationResponse>
     {
         private readonly ICategoryRepository _categoryRepository;
 
@@ -39,10 +40,11 @@ namespace LearnBlazorServerMediator.CategoryMediator
             _categoryRepository = categoryRepository;
         }
 
-        public Task<string> Handle(CategoryDelete request, CancellationToken cancellationToken)
+        public Task<CategoryOperationResponse> Handle(CategoryDelete request, CancellationToken cancellationToken)
         {
-            _categoryRepository.Delete(request._categoryid);
-            return Task.FromResult("删除成功");
+          
+            _categoryRepository.Delete(request.Categoryid);
+            return Task.FromResult(new CategoryOperationResponse() { Message = "操作成功", Result = true } );
         }
     }
 
@@ -91,25 +93,25 @@ namespace LearnBlazorServerMediator.CategoryMediator
         }
     }
 
-    public class CategoryHandlerUpdate : IRequestHandler<CategoryUpdate, string>
+    public class CategoryHandlerUpdate : IRequestHandler<CategoryUpdate, CategoryOperationResponse>
     {
         private readonly ICategoryRepository _categoryRepository;
-        private readonly FluentValidator<Category> _fluentValidator;
+        private readonly FluentValidatorCategory<Category> _fluentValidator;
 
-        public CategoryHandlerUpdate(ICategoryRepository categoryRepository, FluentValidator<Category> fluentValidator)
+        public CategoryHandlerUpdate(ICategoryRepository categoryRepository, FluentValidatorCategory<Category> fluentValidator)
         {
             _categoryRepository = categoryRepository;
             _fluentValidator = fluentValidator;
         }
 
-        public Task<string> Handle(CategoryUpdate request, CancellationToken cancellationToken)
+        public Task<CategoryOperationResponse> Handle(CategoryUpdate request, CancellationToken cancellationToken)
         {
             var result = _fluentValidator.ValidatorUtility(request._category).Result;
 
-            if (result == "")
+            if (result.Result)
             {
                 _categoryRepository.Update(request._category);
-                return Task.FromResult("修改成功");
+              
             }
             return Task.FromResult(result);
         }

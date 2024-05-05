@@ -29,3 +29,4 @@ C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net7.0\Learn
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net7.0\refint\LearnBlazorDto.dll
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net7.0\LearnBlazorDto.pdb
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net7.0\ref\LearnBlazorDto.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net7.0\LearnBlazorDto.sourcelink.json

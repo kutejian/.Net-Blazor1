@@ -9,7 +9,9 @@
 @inject IMessageService _message
 @inject IWebHostEnvironment Environment
 @inject NavigationManager _navManager
-@inject IMediator _mediator;
+@inject Niunan.LearnBlazor.WebServer.Data.ProductData _productData;
+@inject Niunan.LearnBlazor.WebServer.Data.CategoryData _categoryData;
+
 <Layout Style="min-height: 100vh; ">
     <Header Class="header">
         <div class="niunanlogo">
@@ -224,7 +226,7 @@
     //绑定树
     private void BindTree()
     {
-        List<Category> templist = _mediator.Send(new CategoryGetTreeModel()).Result; 
+        List<Category> templist = _categoryData.CategoryDataGetTreeModel();
         List<Category> alllist = new List<Category>()
         {
             new Category(){  CategoryId=0,CategoryName = "全部商品", CategoryPath="", Items = templist}    
@@ -234,8 +236,9 @@
     //查询商品和分类绑定到Data和calist上
     private void BindData()
     {
-        total = _mediator.Send(new ProductCalcCountPage(searchKey, searchSelCaId)).Result;
-        Data = _mediator.Send(new ProductGetListPage(searchKey, searchSelCaId, pageSize, pageIndex)).Result;
+
+        total = _productData.ProductDataCalcCountPage(searchKey, searchSelCaId);
+        Data = _productData.ProductDataGetListPage(searchKey, searchSelCaId, pageSize, pageIndex);
     }
 
     #region 商品详情
@@ -243,7 +246,7 @@
     private Product detailModel = new Product();
     private void openDetailWin(int proid)
     {
-        detailModel = _mediator.Send(new ProductGetModel(proid)).Result;
+        detailModel = _productData.ProductDataGetModel(proid);
         detailWinVisible = true;    
     }
     #endregion
@@ -295,13 +298,13 @@
         Category selCa = args.Node.DataItem;
         Console.WriteLine($"OnSelect {selCa.CategoryId}, {selCa.CategoryName}");
         searchSelCaId = selCa.CategoryId;
-        mbxlist = _mediator.Send(new CategoryGetMBXList(selCa.CategoryId)).Result;
+        mbxlist = _categoryData.CategoryDataGetMBXList(selCa.CategoryId);
         BindData();
     }
     //节点显示商品数
     private string GetTreeTitle(Category ca)
     {
-        return ca.CategoryName + "(商品数：" + _mediator.Send(new ProductCalcCount(ca.CategoryId)).Result + ")";
+        return ca.CategoryName + "(商品数：" + _productData.ProductDataCalcCount(ca.CategoryId)+ ")";
     }
     #endregion
 
@@ -385,24 +388,39 @@
         {
             //编辑
             model.LastUpdateTime = DateTime.Now;
-            _mediator.Send(new ProductUpdate(model));
-            res = "编辑成功!!!";
+            var Updateresult = _productData.ProductDataUpdate(model);
+            _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
+            {         
+                if (Updateresult.Result)
+                {
+
+                    _message.Success(Updateresult.Message, 2.5);
+                }
+                else
+                {
+                    _message.Error(Updateresult.Message, 2.5);
+                }
+            });                     
         }
         else
         {
             //新增
             model.CreatedTime = DateTime.Now;
             model.LastUpdateTime = DateTime.Now;
-
-            _mediator.Send(new ProductAdd(model));
-            //_mediator.Send(new ProductAdd(_product,model));
-
-
-            res = "新增成功!!!";
-
+            var Addresult = _productData.ProductDataAdd(model);
+            _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
+            {
+                if (Addresult.Result)
+                {
+                    _message.Success(Addresult.Message, 2.5);
+                }
+                else
+                {
+                    _message.Error(Addresult.Message, 2.5);
+                }
+            });
         }
         model = new Product();
-        _message.Info(res);
         this.close();
         BindData();
     }
@@ -418,7 +436,7 @@
     //点击编辑按钮
     private void Edit(int proid)
     {
-        model = _mediator.Send(new ProductGetModel(proid)).Result;
+        model = _productData.ProductDataGetModel(proid);
         btnText = "编辑";
         this.visible = true;
         selCaId = model.CategoryId.ToString();
@@ -432,10 +450,30 @@
     //删除商品
     private void DeletePro(int proid)
     {
-        _mediator.Send(new ProductDelete(proid));
-        BindData();
-    }
+     _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
+        {
+            try
+            {
+                var DeResult = _productData.ProductDataDelete(proid);
+                   BindData();
+                if (DeResult.Result)
+                {
+                    _message.Success(DeResult.Message);
+               
+                }
+                else
+                {
+                    _message.Error(DeResult.Message);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                _message.Error("删除商品出错:" + ex.Message);
+            }
+        });     
+       
+    }
     #endregion
 }
 

@@ -7,7 +7,9 @@
 @inject ICategoryRepository _category
 @inject IProductRepository _product
 @inject IMessageService _message
-@inject IMediator _mediator;
+@inject Niunan.LearnBlazor.WebServer.Data.CategoryData _categoryData;
+@inject IMessageService _message
+@inject Niunan.LearnBlazor.WebServer.Data.ProductData _productData;
 
 <Layout Style="min-height: 100vh; ">
     <Sider Width="250" Style="background-color:white;">
@@ -94,7 +96,8 @@
 
     private void BindData()
     {
-        calist = _mediator.Send(new CategoryGetTreeModel()).Result; 
+        calist = _categoryData.CategoryDataGetTreeModel();
+
     }
 
     #region 分类树
@@ -113,7 +116,7 @@
     //节点显示商品数
     private string GetTreeTitle(Category ca)
     {
-        return ca.CategoryName + "(商品数：" + _mediator.Send(new ProductCalcCount(ca.CategoryId)).Result + ")";
+        return ca.CategoryName + "(商品数：" + _productData.ProductDataCalcCount(ca.CategoryId)+ ")";
     }
     //拖拽
     void onDrop(TreeEventArgs<Category> e)
@@ -134,8 +137,8 @@
             nowCa.Sort = 0;
             nowCa.CategoryPath = targetCa.CategoryPath + targetCa.CategoryId + ",";
         }
-        var DeResult = _mediator.Send(new CategoryUpdate(nowCa)).Result;
-        _message.Info(DeResult);
+        var DeResult = _categoryData.CategoryDataGetTreeUpdate(nowCa);
+        _message.Info(DeResult.Message);
 
         BindData();
     }
@@ -153,17 +156,27 @@
             addModel.CategoryPath = "";
         }else
         {
-            Category pca = _mediator.Send(new CategoryGetModel(addModel.ParentId)).Result;
+            Category pca = _categoryData.CategoryDataGetModel(addModel.ParentId);
             addModel.CategoryPath = pca.CategoryPath + pca.CategoryId + ",";
         }
-        //_category.Add(addModel);
-        var Addresult = _mediator.Send(new CategoryAdd(addModel)).Result;
-        if (Addresult=="成功")
-        {
-            addModel = new Category();
-            BindData();
-        }
-        _message.Info(Addresult);
+
+        _message.Loading("正在执行操作.........",2.5).ContinueWith((result) =>
+       {
+           var Addresult = _categoryData.CategoryDataAdd(addModel);
+
+           if (Addresult.Result)
+           {
+               addModel = new Category(); 
+               BindData();
+               _message.Success(Addresult.Message, 2.5);
+           }
+           else
+           {
+               _message.Error(Addresult.Message, 2.5);
+           }            
+       });
+
+
     }
     #endregion
 
@@ -171,13 +184,30 @@
     private Category editModel = new Category();
     private void SubEdit()
     {
-        Category src_ca = _mediator.Send(new CategoryGetModel(editModel.CategoryId)).Result;
+
+        Category src_ca = _categoryData.CategoryDataGetModel(editModel.CategoryId);
+
         src_ca.CategoryName = editModel.CategoryName;
         src_ca.Sort = editModel.Sort;
-        var DeResult = _mediator.Send(new CategoryUpdate(src_ca)).Result;
-        _message.Info(DeResult);
+        var DeResult = _categoryData.CategoryDataGetTreeUpdate(src_ca);
+
+        _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
+          {
+              if (DeResult.Result)
+              {
+                  addModel = new Category();
+                  BindData();
+                  _message.Success(DeResult.Message, 2.5);
+              }
+              else
+              {
+                  _message.Error(DeResult.Message, 2.5);
+              }
+          });
+
         editModel = new Category();
         BindData();
+
     }
     #endregion
 
@@ -185,18 +215,28 @@
     private Category delModel = new Category();
     private void SubDelete()
     {
-        try
-        {
-            var DeResult= _mediator.Send(new CategoryDelete(delModel.CategoryId)).Result;
-            delModel = new Category();
-            _message.Info(DeResult);
-            BindData();
-        }
-        catch (Exception ex)
-        {
-            _message.Error("删除分类出错:"+ex.Message);
-        }
-           
+      _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
+      {
+          try
+          {
+              var DeResult = _categoryData.CategoryDataDelete(delModel.CategoryId);
+              if (DeResult.Result)
+              {
+                  _message.Success(DeResult.Message);
+                  delModel = new Category();
+                  BindData();
+              }
+              else
+              {
+                  _message.Error(DeResult.Message);
+              }
+
+          }
+          catch (Exception ex)
+          {
+              _message.Error("删除分类出错:" + ex.Message);
+          }
+      });
     }
     #endregion
 }

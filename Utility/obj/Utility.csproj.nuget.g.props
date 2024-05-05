@@ -15,5 +15,6 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)antdesign\0.18.3\buildTransitive\AntDesign.props" Condition="Exists('$(NuGetPackageRoot)antdesign\0.18.3\buildTransitive\AntDesign.props')" />
+    <Import Project="$(NuGetPackageRoot)bootstrapblazor\8.4.7\buildTransitive\BootstrapBlazor.props" Condition="Exists('$(NuGetPackageRoot)bootstrapblazor\8.4.7\buildTransitive\BootstrapBlazor.props')" />
   </ImportGroup>
 </Project>

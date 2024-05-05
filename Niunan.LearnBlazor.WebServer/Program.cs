@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Hosting;
 using Utility;
+using Niunan.LearnBlazor.WebServer.Data;
 
 namespace Niunan.LearnBlazor.WebServer
 {
@@ -19,6 +20,10 @@ namespace Niunan.LearnBlazor.WebServer
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
 
+            //注册跟控制器一样 前端获取后端数据的方式只能写在这个类里 
+            builder.Services.AddSingleton<CategoryData>();
+            builder.Services.AddSingleton<ProductData>();
+
             //添加apllo
             builder.Configuration.AddApollo(builder.Configuration.GetSection("apollo"))
                 .AddNamespace("LearnBlazorNamespace", ConfigFileFormat.Json).AddDefault();
@@ -26,9 +31,9 @@ namespace Niunan.LearnBlazor.WebServer
             //配置
             ServiceConfigurator.ConfigureServices(builder.Services, builder.Configuration);
 
+
             var app = builder.Build();
 
-            //全局异常
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

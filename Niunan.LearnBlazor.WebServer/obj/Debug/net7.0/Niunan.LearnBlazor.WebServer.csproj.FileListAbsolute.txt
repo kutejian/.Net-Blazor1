@@ -371,3 +371,7 @@ C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\obj\Debu
 C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\obj\Debug\net7.0\Niunan.LearnBlazor.WebServer.pdb
 C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\obj\Debug\net7.0\Niunan.LearnBlazor.WebServer.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\obj\Debug\net7.0\ref\Niunan.LearnBlazor.WebServer.dll
+C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\obj\Debug\net7.0\Niunan.LearnBlazor.WebServer.sourcelink.json
+C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\bin\Debug\net7.0\BootstrapBlazor.dll
+C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\bin\Debug\net7.0\Longbow.dll
+C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\bin\Debug\net7.0\Longbow.Logging.dll

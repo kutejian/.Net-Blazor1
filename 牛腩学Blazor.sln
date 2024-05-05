@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnBlazorRepository", "Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.csproj", "{FB7A1E02-E7B3-4DD0-BE6F-FDF18840D094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazorServerMediator", "LearnBlazorServer\LearnBlazorServerMediator.csproj", "{C66700C6-47EC-4F1E-B259-9FF6422240DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnBlazorServerMediator", "LearnBlazorServer\LearnBlazorServerMediator.csproj", "{C66700C6-47EC-4F1E-B259-9FF6422240DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

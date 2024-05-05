@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A10009CD-081D-42D4-9F8A-E5EF5BEF8D00}|LearnBlazorRepository\\LearnBlazorRepository.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazorrepository\\repository\\sqlsugarhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10009CD-081D-42D4-9F8A-E5EF5BEF8D00}|LearnBlazorRepository\\LearnBlazorRepository.csproj|solutionrelative:learnblazorrepository\\repository\\sqlsugarhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\data\\productdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\data\\productdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazordto\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|solutionrelative:learnblazordto\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazorserver\\fluentvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|solutionrelative:learnblazorserver\\fluentvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\viewcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\viewcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazordto\\modelsfluentvalidation\\categoryvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|solutionrelative:learnblazordto\\modelsfluentvalidation\\categoryvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazordto\\modelsfluentvalidation\\productvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|solutionrelative:learnblazordto\\modelsfluentvalidation\\productvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazorserver\\productmediator\\producthandlersylloge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|solutionrelative:learnblazorserver\\productmediator\\producthandlersylloge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +42,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\appsettings.json",
-              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\appsettings.json",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\appsettings.json",
-              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-24T17:18:25.817Z",
+              "DocumentIndex": 0,
+              "Title": "ProductData.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAlwDkAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T20:17:58.011Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Program.cs",
-              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Program.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Program.cs",
-              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAMAAAA",
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "LearnBlazorDto\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\Models\\Product.cs",
+              "RelativeToolTip": "LearnBlazorDto\\Models\\Product.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA2wC4AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T17:18:20.476Z",
+              "WhenOpened": "2024-04-30T20:11:49.497Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SqlSugarHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorRepository\\Repository\\SqlSugarHelper.cs",
-              "RelativeDocumentMoniker": "LearnBlazorRepository\\Repository\\SqlSugarHelper.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorRepository\\Repository\\SqlSugarHelper.cs",
-              "RelativeToolTip": "LearnBlazorRepository\\Repository\\SqlSugarHelper.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAMAAAA",
+              "DocumentIndex": 3,
+              "Title": "FluentValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\FluentValidator.cs",
+              "RelativeDocumentMoniker": "LearnBlazorServer\\FluentValidator.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\FluentValidator.cs",
+              "RelativeToolTip": "LearnBlazorServer\\FluentValidator.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAApwCwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T17:09:09.252Z",
+              "WhenOpened": "2024-04-30T20:03:20.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
+              "RelativeDocumentMoniker": "LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
+              "RelativeToolTip": "LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAswBAAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T20:02:47.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoryValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
+              "RelativeDocumentMoniker": "LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
+              "RelativeToolTip": "LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T20:02:44.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ViewCategory.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAUwJMAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-30T19:53:54.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
+              "ViewState": "AQIAAKgBAAAAAAAAAAAhwIUBAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-30T19:49:03.795Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductHandlerSylloge.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
+              "RelativeDocumentMoniker": "LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
+              "RelativeToolTip": "LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAhwB4AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T19:48:14.579Z"
             }
           ]
         }

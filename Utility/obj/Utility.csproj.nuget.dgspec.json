@@ -370,6 +370,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "BootstrapBlazor": {
+              "target": "Package",
+              "version": "[8.4.7, )"
+            },
             "Com.Ctrip.Framework.Apollo": {
               "target": "Package",
               "version": "[2.10.0, )"
@@ -381,6 +385,14 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.9.0, )"
+            },
+            "Longbow": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Longbow.Logging": {
+              "target": "Package",
+              "version": "[5.2.0, )"
             },
             "MediatR": {
               "target": "Package",

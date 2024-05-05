@@ -1,20 +1,35 @@
 ﻿@inherits LayoutComponentBase
-@Body
-@*<PageTitle>Niunan.LearnBlazor.WebServer</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@inject IMessageService _message
+@inject INotificationService _notice
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
 
-        <article class="content px-4">
+
+<ErrorBoundary @ref="errorBoundary">
+    
+    <ChildContent>
             @Body
-        </article>
-    </main>
-</div>
-*@
+    </ChildContent>
+    <ErrorContent Context="ex">
+        @{
+            ShowNotification(ex);
+        }
+    </ErrorContent>
+</ErrorBoundary>
+
+@code {
+
+    ErrorBoundary errorBoundary;
+
+
+    void ShowNotification(Exception ex)
+    {
+        _ = _notice.Error(new()
+            {
+                Message = "发生了异常" + ex.Message,
+                Description = "发生了未处理的异常请重新刷新页面解决次问题"
+            });
+        //重置当前窗口 
+        errorBoundary.Recover();
+    }
+}

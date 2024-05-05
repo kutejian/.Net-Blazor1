@@ -11,7 +11,13 @@ using System.Threading.Tasks;
 
 namespace LearnBlazorServerMediator.ProductMediator
 {
-    public class ProductAdd : IRequest
+    //增删改的返回值
+    public class ProductOperationResponse
+    {
+        public string? Message { get; set; }
+        public bool Result { get; set; }
+    }
+    public class ProductAdd : IRequest<ProductOperationResponse>
     {
         public Product _product { get; }
 
@@ -43,7 +49,7 @@ namespace LearnBlazorServerMediator.ProductMediator
         }
     }
 
-    public class ProductDelete : IRequest
+    public class ProductDelete : IRequest<ProductOperationResponse>
     {
         public int _productId;
 
@@ -79,7 +85,7 @@ namespace LearnBlazorServerMediator.ProductMediator
         }
     }
 
-    public class ProductUpdate : IRequest
+    public class ProductUpdate : IRequest<ProductOperationResponse>
     {
         public Product _product;
 

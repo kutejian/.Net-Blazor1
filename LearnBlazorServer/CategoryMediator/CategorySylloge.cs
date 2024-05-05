@@ -1,4 +1,5 @@
-﻿using LearnBlazorDto.Models;
+﻿using AntDesign;
+using LearnBlazorDto.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,15 @@ using System.Threading.Tasks;
 
 namespace LearnBlazorServerMediator.CategoryMediator
 {
+
+    public class CategoryOperationResponse
+    {
+        public string? Message { get; set; }
+        public bool Result { get; set; }
+    }
+
     //添加分类
-    public class CategoryAdd : IRequest<string>
+    public class CategoryAdd : IRequest<CategoryOperationResponse>
     {
         public Category _category { get; }
 
@@ -18,16 +26,17 @@ namespace LearnBlazorServerMediator.CategoryMediator
             _category = category;
         }
     }
-
+    
     //删除分类
-    public class CategoryDelete : IRequest<string>
+    public class CategoryDelete : IRequest<CategoryOperationResponse>
     {
-        public int _categoryid { get; }
+        public int Categoryid { get; }
 
         public CategoryDelete(int categoryid)
         {
-            _categoryid = categoryid;
+            Categoryid = categoryid;
         }
+        
     }
 
     //好像是获取分类
@@ -58,7 +67,7 @@ namespace LearnBlazorServerMediator.CategoryMediator
     }
 
     //修改分类
-    public class CategoryUpdate : IRequest<string>
+    public class CategoryUpdate : IRequest<CategoryOperationResponse>
     {
         public Category _category { get; }
 
