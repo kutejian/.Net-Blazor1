@@ -38,3 +38,5 @@ C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\obj\Debug\net7.0\re
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\obj\Debug\net7.0\LearnBlazorServerMediator.pdb
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\obj\Debug\net7.0\ref\LearnBlazorServerMediator.dll
 C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\obj\Debug\net7.0\LearnBlazorServerMediator.sourcelink.json
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\bin\Debug\net7.0\IdentityServer.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorServer\bin\Debug\net7.0\IdentityServer.pdb

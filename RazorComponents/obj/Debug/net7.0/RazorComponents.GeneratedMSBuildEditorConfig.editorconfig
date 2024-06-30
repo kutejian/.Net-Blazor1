@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\.Net Blazor\RazorComponents
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Administrator/Desktop/.Net Blazor/RazorComponents/Account/LoginComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = QWNjb3VudFxMb2dpbkNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Administrator/Desktop/.Net Blazor/RazorComponents/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

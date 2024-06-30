@@ -1,0 +1,250 @@
+﻿@page "/Selection_Library"
+
+@using AntDesign
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.ComponentModel
+@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IMessageService _message
+
+    <Card Bordered="true" Title=@("商品筛序") Style="padding: 2px; min-height: 360px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); border-radius: 12px;">
+        <Body>
+            <div style="width: 50%;display: flex; justify-content: center; margin-bottom: 16px;">
+                <Search Size="@InputSize.Large" Placeholder="搜索商品关键字" OnChange="(e)=>Handle(e)" EnterButton="true" @bind-Value="@txtValue" OnSearch="OnSearch" />
+            </div>
+            <Collapse DefaultActiveKey="@(new[]{"1"})" Animation>
+                <Panel Header="展开商品分类" Key="1">
+                    @foreach (var buttonNumber in Enumerable.Range(1, 8))
+                    {
+                        <Button Type="@ButtonType.Dashed" @onclick="() => SetActiveButton(buttonNumber)" Class="@ButtonClass(buttonNumber)">
+                            Dashed @buttonNumber
+                        </Button>
+                    }
+                </Panel>
+            </Collapse>
+            <div>
+                <Select DataSource="@_personNames"
+                        @bind-Value="@_selectedValue"
+                        Style="width: 240px; margin: 16px auto;"
+                        Placeholder="不限"
+                        Size="large" Class="custom-select">
+                    <DropdownRender Context="originNode">
+                        <div>
+                            @originNode
+                            <Divider Style="margin: 4px 0"></Divider>
+                            <div style="padding: 6px">
+                                <AntDesign.InputNumber Min="0" Max="9999999" @bind-Value="inputValue" Style="width: 100px; text-align: center;" />
+                                —
+                                <AntDesign.InputNumber Min="0" Max="9999999" @bind-Value="inputValue2" Style="width: 100px; text-align: center;" />
+                            </div>
+                            <Button Type="@ButtonType.Primary" Style="width: 90%;  margin: 6px auto; display: block;" OnClick="OnConfirm">确认</Button>
+                        </div>
+                    </DropdownRender>
+                </Select>
+                <p>
+                    Selected Value: @_selectedValue <br />
+                </p>
+            </div>
+            <RangePicker TValue="DateTime?[]" @bind-Value="selectedDateRange" OnChange="()=>OnDateRangeChanged(selectedDateRange)" />
+            <p>@selectedDateRange[0] —@selectedDateRange[1]  </p>
+        </Body>
+    </Card>
+
+    <Card Bordered="true" Title=@("搜索结果:为你查询到18000条") Style="margin-top: 16px; padding: 2px; min-height: 360px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); border-radius: 12px;">
+        <Body>
+        <Table TItem="Data" DataSource="data" @bind-PageSize="pageSize">
+            <ChildContent>
+                <PropertyColumn Property="c=>(c.Seniority)" Title="排名" Width="100">
+                     @{
+                        var color = context.Seniority == 1 ? "gold" : context.Seniority == 2 ? "silver" : context.Seniority == 3 ? "gray" : "bronze";
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background-color: @color; display: flex; align-items: center; justify-content: center;">
+                            @context.Seniority
+                        </div>
+                     }
+                 </PropertyColumn>
+
+                 <PropertyColumn Property="c=>c.Img" Title="商品图片" Width="100">
+                    <Image Width="100px" Src=@context.Img />
+                 </PropertyColumn>
+
+                <PropertyColumn Title="商品名称" Property="c=>c.Name">
+                </PropertyColumn>
+                <PropertyColumn Sortable="true" Property="c=>c.Age"></PropertyColumn>
+                <PropertyColumn Property="c=>c.Address">
+                    <TitleTemplate>
+                        <span> <Icon Type="environment" /> Address </span>
+                    </TitleTemplate>
+                </PropertyColumn>
+                <PropertyColumn Title="分类/类别" Property="c=>c.Tags">
+                    @foreach (var tag in context.Tags)
+                    {
+                        var color = tag.Length > 5 ? "geekblue" : "green";
+                        if (tag == "loser")
+                        {
+                            color = "volcano";
+                        }
+                        <Tag Color="@color">@tag</Tag>
+                    }
+                </PropertyColumn>
+            </ChildContent>
+
+            <PaginationTemplate>
+                <Pagination Class="@(context.PaginationClass + " my-custom-pagination")"
+                            Total="context.Total"
+                            PageSize="context.PageSize"
+                            Current="context.PageIndex"
+                            ShowSizeChanger
+                            OnChange="context.HandlePageChange" />
+            </PaginationTemplate>
+        </Table>
+        </Body>
+
+    </Card>
+
+<style>
+    .custom-dropdown-menu {
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .my-custom-pagination {
+        margin: 15px 0;
+    }
+
+        .my-custom-pagination .ant-pagination-item,
+        .my-custom-pagination .ant-pagination-item-link {
+            border-radius: 100%;
+        }
+</style>
+@code {
+    //日期选择
+    private DateTime?[] selectedDateRange = new DateTime?[2];
+
+    private void OnDateRangeChanged(DateTime?[] dates)
+    {
+        selectedDateRange = dates;
+    }
+
+    //下拉框
+    private int inputValue = 0;
+    private int inputValue2 = 100;
+
+    List<string> _personNames = new List<string> { "Jack", "Lucy", "YaoMing" };
+    public string _selectedValue = "不限";
+
+    private void OnConfirm()
+    {
+        _personNames.Add($"{inputValue} — {inputValue2}");
+        _message.Success($"搜索结果：{inputValue} — {inputValue2}");
+    }
+
+
+    //搜索
+    private string txtValue { get; set; }
+    private bool loading;
+    private void Handle(string value)
+    {
+        Console.WriteLine(value);
+    }
+
+    public async Task OnSearch()
+    {
+        await _message.Loading($"searching {txtValue}", 2);
+    }
+
+    private async Task OnEnter(KeyboardEventArgs e)
+    {
+        Console.WriteLine("Enter pressed");
+        loading = true;
+        await Task.Delay(3000);
+        loading = false;
+    }
+
+    //好像是分类
+    private int activeButton = 1;
+
+    private void SetActiveButton(int buttonNumber)
+    {
+        activeButton = buttonNumber;
+
+    }
+
+    private string ButtonClass(int buttonNumber)
+    {
+        return activeButton == buttonNumber ? "ant-btn ant-btn-dashed ant-btn-active" : "ant-btn ant-btn-dashed";
+    }
+
+
+    Data[] data = new Data[]
+    {
+        new()
+        {
+            Key = "1",
+            Seniority = 1,
+            Img = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+            Name = "John Brown",
+            Age = 32,
+            Address = "New York No. 1 Lake Park",
+            Tags = new[] {"nice", "developer"}
+        },
+        new()
+        {
+            Key = "2",
+            Seniority = 2,
+            Img = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+            Name = "Jim Green",
+            Age = 42,
+            Address = "London No. 1 Lake Park",
+            Tags = new[] { "loser"}
+        },
+        new()
+        {
+            Key = "3",
+            Seniority = 3,
+            Img = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+            Name = "Joe Black",
+            Age = 32,
+            Address = "Sidney No. 1 Lake Park",
+            Tags = new[] { "cool", "teacher" }
+        },
+        new()
+        {
+            Key = "4",
+            Seniority = 4,
+            Img = "https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png",
+            Name = "Joe Black",
+            Age = 32,
+            Address = "Sidney No. 1 Lake Park",
+            Tags = new[] { "cool", "teacher" }
+        }
+    };
+
+    private int total => data.Count();
+    private int pageSize = 1;
+
+    public class Data
+    {
+        [DisplayName("Key")]
+        public string Key { get; set; }
+
+        [DisplayName("seniority")]
+        public int Seniority { get; set; }
+
+        [DisplayName("seniority")]
+        public string Img { get; set; }
+
+        [DisplayName("Name")]
+        public string Name { get; set; }
+
+        [DisplayName("Age")]
+        public int Age { get; set; }
+
+        [DisplayName("Address")]
+        public string Address { get; set; }
+
+        [DisplayName("Tags")]
+        public string[] Tags { get; set; }
+    }
+}

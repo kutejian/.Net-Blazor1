@@ -1,0 +1,91 @@
+﻿@page "/Authorize/GitHubCallback"
+@using Microsoft.AspNetCore.Identity
+@using Newtonsoft.Json
+@using System.Net.Http.Headers
+@using IdentityServer.Models.ResultModel
+@using IdentityServer.Models.ViewModels
+@using System.Security.Claims
+@using WebServer.Data
+@using IdentityServer.Model;
+@using System.Security.Claims;
+
+@inject NavigationManager _navigationManager
+@inject AuthService _authService
+@inject IHttpClientFactory _httpClientFactory;
+@inject SignInManager<IdentityServer.Model.UserEntity> _signInManager
+@inject UserManager<IdentityServer.Model.UserEntity> _userManager
+
+<h1>GitHub登录成功,  正在跳转到主页</h1>
+
+@code {
+    [Parameter]
+    public string Code { get; set; }
+
+    [Parameter]
+    public string State { get; set; }
+
+    private string AccessToken { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var uri = new Uri(_navigationManager.Uri);
+            var query = uri.Query.TrimStart('?');
+            var queryParams = System.Web.HttpUtility.ParseQueryString(query);
+
+            Code = queryParams["code"];
+            State = queryParams["state"];
+
+            if (!string.IsNullOrEmpty(Code) && !string.IsNullOrEmpty(State))
+            {
+                var result = await Callback(Code, State);
+                AccessToken = result.AccessToken;
+                var w = _authService.GithubTokenLogin(AccessToken);
+            }
+            else
+            {
+                // Handle error or redirect to another page if necessary
+            }
+            //跳转主页
+            _navigationManager.NavigateTo("/");
+            StateHasChanged();
+        }
+
+
+    }
+    
+    private async Task<ResultModel> Callback(string code, string state)
+    {
+        const string uri = "https://github.com/login/oauth/access_token";
+
+        var param = new Dictionary<string, string>
+            {
+                ["client_id"] = "e3266e9120f5cd22bc44",
+                ["client_secret"] = "86440aed4e6978cc85264b5e99f75a2a96b299ce",
+                ["code"] = code,
+                ["state"] = state
+            };
+
+        using var httpClient = new HttpClient();
+        httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        var response = await httpClient.PostAsync(uri, new FormUrlEncodedContent(param));
+        var responseContent = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new HttpRequestException($"{response.StatusCode}, {responseContent}");
+        }
+
+        string accessToken = Convert.ToString(JsonConvert.DeserializeObject<dynamic>(responseContent)!.access_token);
+
+        if (string.IsNullOrWhiteSpace(accessToken))
+        {
+            throw new ArgumentNullException($"accessToken is empty");
+        }
+
+        return new ResultModel() { AccessToken = accessToken };
+    }
+
+}

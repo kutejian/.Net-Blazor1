@@ -1,0 +1,150 @@
+﻿@page "/login"
+@using AntDesign
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components.Authorization
+@using LearnBlazorDto.Models.Account
+@using System.Security.Claims
+@using WebServer.Data
+
+@inject NavigationManager _navigation
+@inject SignInManager<IdentityServer.Model.UserEntity> _SignInManager
+@inject UserManager<IdentityServer.Model.UserEntity> _UserManager
+@inject IMessageService _message
+@inject ModalService _modalService
+
+@inject AuthService _authService
+
+
+<Form Model="@Usermodel" OnFinish="HandleValidSubmit">
+    <FormItem>
+        <Input @bind-Value="Usermodel.Email" Placeholder="Email" />
+    </FormItem>
+    <FormItem>
+        <InputPassword @bind-Value="Usermodel.Password" Placeholder="Password" />
+    </FormItem>
+    <FormItem>
+        <Button Type="primary" HtmlType="submit" Loading="@isSubmitting" Disabled="@isSubmitting">登 录</Button>
+        <Button Style="margin-left: 30px;" Type="@ButtonType.Primary" Icon="@IconType.Outline.Github" Shape="@ButtonShape.Round" OnClick='() => Extend("Github")' Loading="@isSubmitting" Disabled="@isSubmitting">
+            GitHub
+        </Button>
+        <Button Style="margin-left: 30px;" Type="@ButtonType.Primary" Icon="@IconType.Outline.Google" Shape="@ButtonShape.Round" OnClick='() => Extend("Google")' Loading="@isSubmitting" Disabled="@isSubmitting">
+            Google
+        </Button>
+    </FormItem>
+</Form>
+
+@if (LoginError != null)
+{
+    <p class="text-danger">@LoginError</p>
+}
+
+@code {
+    [Parameter]
+    public EventCallback OnLoginSuccess { get; set; }
+
+    public UserLoginModel Usermodel { get; set; } = new UserLoginModel();
+    public string LoginError { get; set; }
+    private bool isSubmitting = false;
+
+
+    private async Task Extend(string extend)
+    {
+        if (extend == "Github")
+        {
+            var result = await _authService.GithubLogin();
+
+            if (result.IsSuccessStatusCode)
+            {
+                var redirectUrl = await result.Content.ReadAsStringAsync();
+
+                _navigation.NavigateTo(redirectUrl, forceLoad: true);
+
+                
+
+                var authState = await _authService.GetAuthenticationStateAsync();
+
+                if (authState.User.Identity.IsAuthenticated)
+                {
+                    await _message.Success("登录成功", 3);
+                    await OnLoginSuccess.InvokeAsync();
+                    return;
+                }
+            }
+            else
+            {
+                LoginError = "登录失败，请重试";
+                await _message.Error(LoginError, 3);
+            }
+        }
+        else if (extend == "Google")
+        {
+            // Implement Google login logic here
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        isSubmitting = true;
+        StateHasChanged(); // 立即更新界面，显示加载状态
+        try
+        {
+            var user = await _UserManager.FindByEmailAsync(Usermodel.Email);
+            if (user != null)
+            {
+                if (!await _UserManager.IsEmailConfirmedAsync(user))
+                {
+                    LoginError = "邮箱未验证，请先去验证邮箱，在重新刷新页面登录";
+                    await _message.Error(LoginError, 3);
+                    return;
+                }
+                if (await _UserManager.CheckPasswordAsync(user, Usermodel.Password))
+                {
+                    var result = await _authService.Login(Usermodel);
+
+                    if (result.Successful)
+                    {
+                        var authState = await _authService.GetAuthenticationStateAsync();
+
+                        if (authState.User.Identity.IsAuthenticated)
+                        {
+                            await _message.Success("登录成功", 3);
+                            await OnLoginSuccess.InvokeAsync();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        LoginError = "登录失败，请重试";
+                        await _message.Error(LoginError, 3);
+                    }
+
+                }
+                else
+                {
+                    LoginError = "密码错误";
+                    await _message.Error(LoginError, 3);
+                }
+            }
+            else
+            {
+                LoginError = "账号未注册";
+                await _message.Error(LoginError, 3);
+            }
+
+            _modalService.Warning(new ConfirmOptions()
+                {
+                    Title = "提 示 内 容 :",
+                    Content = LoginError,
+                    Centered = true,
+                    Mask = true,
+                    MaskClosable = true,
+                });
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged(); // 恢复界面状态
+        }
+    }
+}
+

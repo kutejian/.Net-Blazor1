@@ -14,7 +14,7 @@ namespace LearnBlazorRepository.Repository
             _configuration = configuration;
         }
 
-        public string ConnectionString => _configuration.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
+        public string ConnectionString => _configuration.GetSection("SqlServer").GetSection("DefaultConnection").Value;
 
         public SqlSugarClient SqlSugarDb()
         {

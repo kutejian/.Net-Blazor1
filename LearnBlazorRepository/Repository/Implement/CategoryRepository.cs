@@ -3,6 +3,7 @@ using LearnBlazorDto.Models;
 using LearnBlazorEntity.Models;
 using LearnBlazorRepository.Repository;
 using LearnBlazorRepository.Repository.Interface;
+using MongoDB.Driver;
 using SqlSugar;
 
 namespace Niunan.LearnBlazor.WebServer.Repository.Implement
@@ -10,11 +11,13 @@ namespace Niunan.LearnBlazor.WebServer.Repository.Implement
     public class CategoryRepository : ICategoryRepository
     {
         private readonly SqlSugarClient _SqlSugarDb;
+        private readonly IMongoCollection<CategoryEntity> _IMongoCollection;
         private IMapper _mapper;
 
-        public CategoryRepository(SqlSugarHelper SqlSugarHelper, IMapper mapper)
+        public CategoryRepository(SqlSugarHelper SqlSugarHelper,MongoDBHelper mongoDBHelper,  IMapper mapper)
         {
             _SqlSugarDb = SqlSugarHelper.SqlSugarDb();
+            _IMongoCollection = mongoDBHelper.DateBaseCreation<CategoryEntity>("CategoryEntity");
             _mapper = mapper;
         }
 
@@ -24,7 +27,6 @@ namespace Niunan.LearnBlazor.WebServer.Repository.Implement
             var modelEneity = _mapper.Map<CategoryEntity>(model);
             _SqlSugarDb.Insertable<CategoryEntity>(modelEneity).ExecuteCommand();
         }
-
         //删除分类
         public void Delete(int id)
         {
@@ -46,6 +48,8 @@ namespace Niunan.LearnBlazor.WebServer.Repository.Implement
         //好像是获取分类
         public List<string> GetMBXList(int caid)
         {
+            
+
             if (caid == 0)
             {
                 return new List<string>() { "全部商品" };
@@ -69,6 +73,9 @@ namespace Niunan.LearnBlazor.WebServer.Repository.Implement
         //获取单个分类
         public Category GetModel(int caid)
         {
+            //MongoDB数据库
+            // var ww = _IMongoCollection.Find(_ => true).ToList();
+            
             var modelEneity = _SqlSugarDb.Queryable<CategoryEntity>().Single(ca => ca.CategoryId == caid);
             var Category = _mapper.Map<Category>(modelEneity);
             return Category;

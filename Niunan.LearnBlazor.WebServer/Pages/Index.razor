@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/MainLayout"
 @using LearnBlazorDto.Models;
 @using LearnBlazorRepository.Repository.Interface;
 @using LearnBlazorServerMediator.CategoryMediator
@@ -8,9 +8,10 @@
 @inject ICategoryRepository _category
 @inject IMessageService _message
 @inject IWebHostEnvironment Environment
-@inject NavigationManager _navManager
+@inject NavigationManager _navigation
 @inject Niunan.LearnBlazor.WebServer.Data.ProductData _productData;
 @inject Niunan.LearnBlazor.WebServer.Data.CategoryData _categoryData;
+@namespace Niunan.LearnBlazor.WebServer.Pages.Account
 
 <Layout Style="min-height: 100vh; ">
     <Header Class="header">
@@ -21,14 +22,16 @@
         {
             <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal">
                 <MenuItem Key="1" @onclick="Add">新增商品</MenuItem>
-                <MenuItem Key="3" @onclick="@(()=>{_navManager.NavigateTo("/category");})">分类管理</MenuItem>
+                <MenuItem Key="3" @onclick="@(()=>{_navigation.NavigateTo("/category");})">分类管理</MenuItem>
                 <MenuItem Key="2" @onclick="@(()=>{isLogin = false;})">退出登录</MenuItem>
             </Menu>
         }
         else
         {
 
-            <Button Type="primary" OnClick="@(()=>{ loginWinVisible = true; })">登录</Button>
+            <Button Type="primary" OnClick="@(()=>{ isLoginModalVisible = true; })">登 录</Button>
+            <Button Style="margin-left: 30px;" Type="primary" OnClick="@(()=>{ isRegisterModalVisible = true; })">注 册</Button>
+            <Button Style="margin-left: 30px;" Type="primary" OnClick="@(()=>{ isForgotPasswordSuccessModalVisible = true; })">忘 记 密 码 !</Button>
         }
     </Header>
     <Layout>
@@ -123,7 +126,7 @@
             <TreeSelect TItem="Category"
                         Style="width:100%;"
                         DataSource="calist"
-            @bind-Value="@selCaId"
+                        @bind-Value="@selCaId"
                         Placeholder="请选择"
                         AllowClear
                         TreeDefaultExpandAll
@@ -148,18 +151,19 @@
 </Drawer>
 
 
-<Modal Title="登录"
-       Visible="@loginWinVisible"
-       OnOk="@Login"
-       OnCancel="@(()=>{loginWinVisible = false;})">
-    <p>
-        <Input Placeholder="请输入您的用户名" @bind-Value="@loginName" />
-    </p>
-    <p>
-        <InputPassword Placeholder="请输入您的登录密码" @bind-Value="@loginPassword" />
-    </p>
 
+<Modal Footer=null @ref="loginModal" Title="登 录" Visible="@isLoginModalVisible" OnCancel="@HandleLoginCancel">
+    <LoginComponent OnLoginSuccess="HandleLoginSuccess" />
 </Modal>
+
+<Modal Footer=null @ref="forgotPasswordModal" Title="忘 记 密 码!" Visible="@isForgotPasswordSuccessModalVisible" OnCancel="@HandleForgotPassword">
+    <ForgotPasswordComponent OnForgotPasswordSuccess="HandleForgotPasswordSuccess" />
+</Modal>
+
+<Modal Footer=null @ref="registerModal" Title="注 册" Visible="@isRegisterModalVisible" OnCancel="@HandleRegisterCancel">
+    <RegisterComponent OnRegisterSuccess="HandleRegisterSuccess" />
+</Modal>
+
 
 <Modal Title="商品详情" Footer="null" MaxBodyHeight="@("80vh")" Width="@("80vw")"
        Visible="@detailWinVisible" OnCancel="@(()=>{detailWinVisible = false;})">
@@ -169,13 +173,13 @@
         <DescriptionsItem Title="分类">@detailModel.Category.CategoryName</DescriptionsItem>
         <DescriptionsItem Title="品牌">@detailModel.BrandName</DescriptionsItem>
         <DescriptionsItem Title="单位">
-           @detailModel.Unit
+            @detailModel.Unit
         </DescriptionsItem>
         <DescriptionsItem Title="单价">
-           ￥ @detailModel.UnitPrice
+            ￥ @detailModel.UnitPrice
         </DescriptionsItem>
         <DescriptionsItem Title="使用感受">
-           @detailModel.UseFeel
+            @detailModel.UseFeel
         </DescriptionsItem>
         <DescriptionsItem Title="创建时间">
             @detailModel.CreatedTime.ToString("yyyy-MM-dd HH:mm")
@@ -190,17 +194,59 @@
         {
             <Image Width="200" Src="@("/images/"+@item.Title)" />
         }
-     
+
     </ImagePreviewGroup>
 </Modal>
-<Button OnClick="@aa"></Button>
-@code {
 
-    private void aa()
+<NavLink href="/Authorize/GitHubAuthorize">Go to Page</NavLink>
+@code {
+    private bool isLoginModalVisible = false; //是否显示登录框
+    private bool isRegisterModalVisible = false; //是否显示注册框
+    private bool isForgotPasswordSuccessModalVisible = false; //是否显示忘记密码成功框
+
+    private Modal loginModal;
+    private Modal registerModal;
+    private Modal forgotPasswordModal;
+
+    private void HandleLoginCancel(MouseEventArgs e)
     {
+        isLoginModalVisible = false;
     }
 
+    private void HandleRegisterCancel(MouseEventArgs e)
+    {
+        isRegisterModalVisible = false;
+    }
+    private void HandleForgotPassword(MouseEventArgs e)
+    {
+        isForgotPasswordSuccessModalVisible = false;
+    }
 
+    //弹窗关系
+    private async Task HandleLoginSuccess()
+    {
+        isLoginModalVisible = false;
+        await InvokeAsync(StateHasChanged);
+
+        // 等待状态更新完毕后再进行导航
+        await Task.Delay(100); // 可选的延迟，确保状态更新完毕
+        _navigation.NavigateTo("/");
+    }
+
+    //弹窗关系
+    private async Task HandleRegisterSuccess()
+    {
+        isRegisterModalVisible = false;
+        await InvokeAsync(StateHasChanged);
+        _navigation.NavigateTo("/");
+    }
+    //弹窗关系
+    private async Task HandleForgotPasswordSuccess()
+    {
+        isForgotPasswordSuccessModalVisible = false;
+        await InvokeAsync(StateHasChanged);
+        _navigation.NavigateTo("/");
+    }
 
     //商品图片列表设置，每行都是4个
     private ListGridType grid = new()
@@ -229,8 +275,8 @@
         List<Category> templist = _categoryData.CategoryDataGetTreeModel();
         List<Category> alllist = new List<Category>()
         {
-            new Category(){  CategoryId=0,CategoryName = "全部商品", CategoryPath="", Items = templist}    
-        }; 
+            new Category(){  CategoryId=0,CategoryName = "全部商品", CategoryPath="", Items = templist}
+        };
         calist = alllist;
     }
     //查询商品和分类绑定到Data和calist上
@@ -247,7 +293,7 @@
     private void openDetailWin(int proid)
     {
         detailModel = _productData.ProductDataGetModel(proid);
-        detailWinVisible = true;    
+        detailWinVisible = true;
     }
     #endregion
 
@@ -266,7 +312,6 @@
     #region 登录，退出登录
     //是否登录
     private bool isLogin = true;
-    private bool loginWinVisible = false; //是否显示登录框
     private string loginName = ""; //登录名
     private string loginPassword = ""; //登录密码
                                        //登录方法
@@ -275,7 +320,7 @@
         if (loginName == "niunan" && loginPassword == "123456")
         {
             isLogin = true;
-            loginWinVisible = false;
+            isLoginModalVisible = false;
         }
         else
         {
@@ -304,7 +349,7 @@
     //节点显示商品数
     private string GetTreeTitle(Category ca)
     {
-        return ca.CategoryName + "(商品数：" + _productData.ProductDataCalcCount(ca.CategoryId)+ ")";
+        return ca.CategoryName + "(商品数：" + _productData.ProductDataCalcCount(ca.CategoryId) + ")";
     }
     #endregion
 
@@ -366,7 +411,7 @@
         this.visible = false;
     }
     //新增、编辑商品
-    private  void HandleSubmit()
+    private void HandleSubmit()
     {
         Console.WriteLine("提交了，名称：" + model.ProductName);
         string res = "";
@@ -390,7 +435,7 @@
             model.LastUpdateTime = DateTime.Now;
             var Updateresult = _productData.ProductDataUpdate(model);
             _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
-            {         
+            {
                 if (Updateresult.Result)
                 {
 
@@ -400,7 +445,7 @@
                 {
                     _message.Error(Updateresult.Message, 2.5);
                 }
-            });                     
+            });
         }
         else
         {
@@ -444,35 +489,35 @@
         foreach (var item in model.Images)
         {
             fileList.Add(new UploadFileItem() { FileName = item.Title });
-        } 
+        }
     }
 
     //删除商品
     private void DeletePro(int proid)
     {
-     _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
-        {
-            try
-            {
-                var DeResult = _productData.ProductDataDelete(proid);
+        _message.Loading("正在执行操作.........", 2.5).ContinueWith((result) =>
+           {
+               try
+               {
+                   var DeResult = _productData.ProductDataDelete(proid);
                    BindData();
-                if (DeResult.Result)
-                {
-                    _message.Success(DeResult.Message);
-               
-                }
-                else
-                {
-                    _message.Error(DeResult.Message);
-                }
+                   if (DeResult.Result)
+                   {
+                       _message.Success(DeResult.Message);
 
-            }
-            catch (Exception ex)
-            {
-                _message.Error("删除商品出错:" + ex.Message);
-            }
-        });     
-       
+                   }
+                   else
+                   {
+                       _message.Error(DeResult.Message);
+                   }
+
+               }
+               catch (Exception ex)
+               {
+                   _message.Error("删除商品出错:" + ex.Message);
+               }
+           });
+
     }
     #endregion
 }

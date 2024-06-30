@@ -1,0 +1,212 @@
+﻿@page "/"
+
+@using AntDesign
+@using Microsoft.AspNetCore.Components.Authorization
+@using Niunan.LearnBlazor.WebServer.Pages.Commodity;
+@using Microsoft.AspNetCore.Identity
+@using WebServer.Data
+
+@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+@inject IMessageService _message
+@inject NavigationManager _navigation
+@inject SignInManager<IdentityServer.Model.UserEntity> _signInManager;
+@inject AuthService _authService
+<Layout Style="min-height: 100vh;">
+    <Sider Collapsible>
+        <div class="logo" />
+
+        <Menu Theme="MenuTheme.Dark" DefaultSelectedKeys=@(new[]{"1"}) Mode="MenuMode.Inline">
+            <MenuItem Key="1" @onclick="() => ShowComponent(typeof(SelectionLibrary))">
+                <Icon Type="pie-chart" Theme="outline" />
+                <span>Alex Option 1</span>
+            </MenuItem>
+            <MenuItem Key="2">
+                <Icon Type="desktop" Theme="outline" />
+                <span>Option 2</span>
+            </MenuItem>
+
+            <SubMenu Key="sub1" TitleTemplate=sub1Title>
+                <MenuItem Key="3">Tom</MenuItem>
+                <MenuItem Key="4" @onclick="() => ShowComponent(typeof(SelectionLibrary))">Bill</MenuItem>
+                <MenuItem Key="5">Alex</MenuItem>
+            </SubMenu>
+
+            <SubMenu Key="sub2" TitleTemplate=sub2Title>
+                <MenuItem Key="6">Team 1</MenuItem>
+                <MenuItem Key="8">Team 2</MenuItem>
+            </SubMenu>
+            <MenuItem Key="9">
+                <Icon Type="file" Theme="outline" />
+                <span>Option 3</span>
+            </MenuItem>
+        </Menu>
+    </Sider>
+    <Layout Class="site-layout">
+        <Header Class="site-layout-background" Style="padding: 0; display: flex; justify-content: space-between; align-items: center;">
+            <div></div> <!-- 用于左侧填充对齐 -->
+            <div style="margin-right: 16px;">
+@*                 @if (_signInManager.IsSignedIn(IdentityServer.Model.UserEntity))
+                {
+                    
+                } *@
+
+                @if (isLoggedIn)
+                {
+                    <Dropdown Placement="@Placement.BottomRight">
+                        <Overlay>
+                            <Menu Class="custom-dropdown-menu">
+                                <MenuItem Key="profile" OnClick="@(() => Navigation.NavigateTo("/profile"))">
+                                    <Icon Type="user" Theme="outline" Style="font-size : 18px" />
+                                    <span style="font-size : 18px">Profile</span>
+                                </MenuItem>
+                                <MenuItem Key="settings" OnClick="@(() => Navigation.NavigateTo("/settings"))">
+                                    <Icon Type="setting" Theme="outline" Style="font-size : 18px" />
+                                    <span style="font-size : 18px">Settings</span>
+                                </MenuItem>
+                                <MenuItem Key="logout" OnClick="Logout">
+                                    <Icon Type="logout" Theme="outline" Style="font-size : 18px" />
+                                    <span style="font-size : 18px">Logout</span>
+                                </MenuItem>
+                            </Menu>
+                        </Overlay>
+                        <ChildContent>
+                            <Avatar Style="cursor: pointer; margin-right: 16px;" Size="large" Src="https://avatars0.githubusercontent.com/u/22736418?s=88&v=4" />
+                        </ChildContent>
+                    </Dropdown>
+                }
+                else
+                {
+                    <Button Type="primary" Style="margin-right: 8px; border-radius: 8px;" OnClick="@(()=>{ isLoginModalVisible = true; })">登 录</Button>
+                    <Button Type="default" Style="margin-right: 8px; border-radius: 8px;" OnClick="@(()=>{ isRegisterModalVisible = true; })">注 册</Button>
+                    <Button Type="default" Style="margin-right: 8px; border-radius: 8px;" OnClick="@(()=>{ isForgotPasswordSuccessModalVisible = true; })">忘 记 密 码!</Button>
+                }
+            </div>
+        </Header>
+        <Content Style="padding: 16px;">
+            <DynamicComponent Type="currentComponent" />
+
+        </Content>
+
+        <Footer Style="text-align: center;">Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
+</Layout>
+
+
+<!-- 弹窗 -->
+<Modal Footer=null @ref="loginModal" Title="登 录" Visible="@isLoginModalVisible" OnCancel="@HandleLoginCancel">
+    <LoginComponent OnLoginSuccess="HandleLoginSuccess" />
+</Modal>
+
+<Modal Footer=null @ref="forgotPasswordModal" Title="忘 记 密 码!" Visible="@isForgotPasswordSuccessModalVisible" OnCancel="@HandleForgotPassword">
+    <ForgotPasswordComponent OnForgotPasswordSuccess="HandleForgotPasswordSuccess" />
+</Modal>
+
+<Modal Footer=null @ref="registerModal" Title="注 册" Visible="@isRegisterModalVisible" OnCancel="@HandleRegisterCancel">
+    <RegisterComponent OnRegisterSuccess="HandleRegisterSuccess" />
+</Modal>
+
+<style>
+    .button-container > .ant-btn {
+        margin-right: 8px; /* 设置按钮之间的默认间距 */
+        margin-bottom: 8px; /* 可选，设置按钮行之间的垂直间距 */
+    }
+    .logo{
+        height: 32px;
+        background: rgba(255, 0.2);
+        margin: 16px;
+        background-image: url("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg");
+    }
+</style>
+
+@code {
+    //点击不同的导航 跳转到不同的组件 当前显示的组件
+    private Type currentComponent=typeof(SelectionLibrary) ;
+
+    private void ShowComponent(Type componentType)
+    {
+        currentComponent = componentType;
+    }
+
+    //是否登录
+    private bool isLoggedIn;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            AuthenticationState authState = await _authService.GetAuthenticationStateAsync();
+            isLoggedIn = authState.User.Identity.IsAuthenticated;
+            StateHasChanged();
+        }
+    }
+    //注销
+    private void Logout(MouseEventArgs e)
+    {
+        // 处理注销逻辑，例如清除认证状态，重定向到登录页面等
+        // 假设有一个LogoutAsync方法可以处理注销逻辑
+        // await AuthenticationStateProvider.LogoutAsync();
+        Navigation.NavigateTo("/logout");
+    }
+    //
+    private bool isLoginModalVisible = false; //是否显示登录框
+    private bool isRegisterModalVisible = false; //是否显示注册框
+    private bool isForgotPasswordSuccessModalVisible = false; //是否显示忘记密码成功框
+
+    private Modal loginModal;
+    private Modal registerModal;
+    private Modal forgotPasswordModal;
+
+    private void HandleLoginCancel(MouseEventArgs e)
+    {
+        isLoginModalVisible = false;
+    }
+
+    private void HandleRegisterCancel(MouseEventArgs e)
+    {
+        isRegisterModalVisible = false;
+    }
+    private void HandleForgotPassword(MouseEventArgs e)
+    {
+        isForgotPasswordSuccessModalVisible = false;
+    }
+
+    //弹窗关系
+    private async Task HandleLoginSuccess()
+    {
+        isLoginModalVisible = false;
+        await InvokeAsync(StateHasChanged);
+
+        // 等待状态更新完毕后再进行导航
+        await Task.Delay(100); // 可选的延迟，确保状态更新完毕
+        _navigation.NavigateTo("/");
+    }
+
+    //弹窗关系
+    private async Task HandleRegisterSuccess()
+    {
+        isRegisterModalVisible = false;
+        await InvokeAsync(StateHasChanged);
+        _navigation.NavigateTo("/");
+    }
+    //弹窗关系
+    private async Task HandleForgotPasswordSuccess()
+    {
+        isForgotPasswordSuccessModalVisible = false;
+        await InvokeAsync(StateHasChanged);
+        _navigation.NavigateTo("/");
+    }
+
+    RenderFragment sub1Title =
+    @<span>
+        <Icon Type="user" Theme="outline" />
+        <span>User</span>
+    </span>;
+
+    RenderFragment sub2Title =
+    @<span>
+        <Icon Type="team" Theme="outline" />
+        <span>Team</span>
+    </span>;
+
+ 
+}

@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using LearnBlazorDto.Models;
 using LearnBlazorEntity.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IdentityServer.Model;
+using LearnBlazorDto.Models.Account;
 
 namespace LearnBlazorRepository.Repository
 {
@@ -19,6 +16,11 @@ namespace LearnBlazorRepository.Repository
             CreateMap<ProductEntity, Product>();
             CreateMap<ProductImage, ProductImageEntity>();
             CreateMap<ProductImageEntity, ProductImage>();
+            CreateMap<UserRegisterModel, IdentityServer.Model.UserEntity>();
+            CreateMap<UserLoginModel, IdentityServer.Model.UserEntity>();
+
+            CreateMap<UserRegisterModel, UserEntity>().ForMember(user => user.UserName,
+               opt => opt.MapFrom(model => model.Email));
         }
     }
 }

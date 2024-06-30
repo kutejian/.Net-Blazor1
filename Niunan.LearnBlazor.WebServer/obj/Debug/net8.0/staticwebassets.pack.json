@@ -1,0 +1,201 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Niunan.LearnBlazor.WebServer.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Niunan.LearnBlazor.WebServer.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\1c2b053\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\1c2b053\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\31ee61b\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\31ee61b\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\3f33f99\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\3f33f99\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\4e796da\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\4e796da\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\7e318bc\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\7e318bc\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\aa3619b\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\aa3619b\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\b0fdc35\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\b0fdc35\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\d52471b\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\d52471b\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\d6cb83a\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\d6cb83a\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\User\\e60562b\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\User\\e60562b\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\06ac24.jpg",
+      "PackagePath": "staticwebassets\\images\\06ac24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\2f4f14.jpg",
+      "PackagePath": "staticwebassets\\images\\2f4f14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\2f76f5.jpg",
+      "PackagePath": "staticwebassets\\images\\2f76f5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\42056c.jpg",
+      "PackagePath": "staticwebassets\\images\\42056c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\432106.jpg",
+      "PackagePath": "staticwebassets\\images\\432106.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\5cc4ee.jpg",
+      "PackagePath": "staticwebassets\\images\\5cc4ee.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\5d47c6.jpg",
+      "PackagePath": "staticwebassets\\images\\5d47c6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\78e011.jpg",
+      "PackagePath": "staticwebassets\\images\\78e011.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\7fbe9a.jpg",
+      "PackagePath": "staticwebassets\\images\\7fbe9a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\7ffa43.jpg",
+      "PackagePath": "staticwebassets\\images\\7ffa43.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\85cb75.jpg",
+      "PackagePath": "staticwebassets\\images\\85cb75.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\8e8fd0.jpg",
+      "PackagePath": "staticwebassets\\images\\8e8fd0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\956162.jpg",
+      "PackagePath": "staticwebassets\\images\\956162.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\95983b.jpg",
+      "PackagePath": "staticwebassets\\images\\95983b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\96e421.jpg",
+      "PackagePath": "staticwebassets\\images\\96e421.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\DefaultAvatar.jpg",
+      "PackagePath": "staticwebassets\\images\\DefaultAvatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\b8cb8b.jpg",
+      "PackagePath": "staticwebassets\\images\\b8cb8b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\b8fe5c.jpg",
+      "PackagePath": "staticwebassets\\images\\b8fe5c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\c33cb2.jpg",
+      "PackagePath": "staticwebassets\\images\\c33cb2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\d9632b.jpg",
+      "PackagePath": "staticwebassets\\images\\d9632b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\wwwroot\\images\\fe240b.jpg",
+      "PackagePath": "staticwebassets\\images\\fe240b.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Niunan.LearnBlazor.WebServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Niunan.LearnBlazor.WebServer.props",
+      "PackagePath": "build\\Niunan.LearnBlazor.WebServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Niunan.LearnBlazor.WebServer.props",
+      "PackagePath": "buildMultiTargeting\\Niunan.LearnBlazor.WebServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Niunan.LearnBlazor.WebServer.props",
+      "PackagePath": "buildTransitive\\Niunan.LearnBlazor.WebServer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

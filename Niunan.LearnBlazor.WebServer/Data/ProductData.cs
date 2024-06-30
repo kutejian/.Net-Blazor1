@@ -8,9 +8,13 @@ namespace Niunan.LearnBlazor.WebServer.Data
     public class ProductData
     {
         public IMediator _mediator;
-        public ProductData(IMediator mediator)
+        //定时器任务
+        public TaskSchedulerQuartz.SchedulerService _schedulerService;
+        public ProductData(IMediator mediator , TaskSchedulerQuartz.SchedulerService schedulerService)
         {
             _mediator = mediator;
+            _schedulerService = schedulerService;
+            //_schedulerService.RefreshIeaderboardRegularlyJobScheduleJob();
         }
 
 

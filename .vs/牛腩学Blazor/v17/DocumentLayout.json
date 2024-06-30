@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\data\\productdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\data\\productdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\data\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\data\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazordto\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|solutionrelative:learnblazordto\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{445620A4-5B33-4A35-8641-17D232A7EE51}|IdentityServer\\IdentityServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\identityserver\\authorization\\githubauthorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{445620A4-5B33-4A35-8641-17D232A7EE51}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\authorization\\githubauthorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\account\\confirmemail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\account\\confirmemail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazorserver\\fluentvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|solutionrelative:learnblazorserver\\fluentvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\viewcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\viewcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\account\\logincomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\account\\logincomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazordto\\modelsfluentvalidation\\categoryvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|solutionrelative:learnblazordto\\modelsfluentvalidation\\categoryvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\account\\githubtoken.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\account\\githubtoken.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazordto\\modelsfluentvalidation\\productvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7897550A-B86E-4E47-A060-1E2E0CF81DFA}|LearnBlazorDto\\LearnBlazorDto.csproj|solutionrelative:learnblazordto\\modelsfluentvalidation\\productvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\pages\\account\\registercomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\pages\\account\\registercomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|c:\\users\\administrator\\desktop\\.net blazor\\learnblazorserver\\productmediator\\producthandlersylloge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C66700C6-47EC-4F1E-B259-9FF6422240DA}|LearnBlazorServer\\LearnBlazorServerMediator.csproj|solutionrelative:learnblazorserver\\productmediator\\producthandlersylloge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{445620A4-5B33-4A35-8641-17D232A7EE51}|IdentityServer\\IdentityServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\identityserver\\serviceidentityconfigurator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{445620A4-5B33-4A35-8641-17D232A7EE51}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\serviceidentityconfigurator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|c:\\users\\administrator\\desktop\\.net blazor\\niunan.learnblazor.webserver\\controllers\\authorizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12CEBBA1-465D-4E7C-AC8E-AE282F508EC7}|Niunan.LearnBlazor.WebServer\\Niunan.LearnBlazor.WebServer.csproj|solutionrelative:niunan.learnblazor.webserver\\controllers\\authorizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,106 +50,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductData.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
-              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
-              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Data\\ProductData.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAlwDkAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T20:17:58.011Z",
+              "DocumentIndex": 2,
+              "Title": "ConfirmEmail.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\ConfirmEmail.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\ConfirmEmail.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\ConfirmEmail.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\ConfirmEmail.razor",
+              "ViewState": "AQIAAC0AAAAAAAAAAADwvzcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-23T15:43:39.304Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "LearnBlazorDto\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\Models\\Product.cs",
-              "RelativeToolTip": "LearnBlazorDto\\Models\\Product.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAA2wC4AAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T20:11:49.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FluentValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\FluentValidator.cs",
-              "RelativeDocumentMoniker": "LearnBlazorServer\\FluentValidator.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\FluentValidator.cs",
-              "RelativeToolTip": "LearnBlazorServer\\FluentValidator.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAApwCwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T20:03:20.477Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ProductValidation.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
-              "RelativeDocumentMoniker": "LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
-              "RelativeToolTip": "LearnBlazorDto\\ModelsFluentValidation\\ProductValidation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAswBAAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T20:02:47.028Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CategoryValidation.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
-              "RelativeDocumentMoniker": "LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
-              "RelativeToolTip": "LearnBlazorDto\\ModelsFluentValidation\\CategoryValidation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T20:02:44.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ViewCategory.razor",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
-              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
-              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\ViewCategory.razor",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAUwJMAAAAdAAAA",
+              "Title": "RegisterComponent.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\RegisterComponent.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\RegisterComponent.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\RegisterComponent.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\RegisterComponent.razor",
+              "ViewState": "AQIAAEgAAAAAAAAAAADwv1YAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T19:53:54.065Z"
+              "WhenOpened": "2024-06-23T15:37:51.698Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.razor",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
-              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
-              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Index.razor",
-              "ViewState": "AQIAAKgBAAAAAAAAAAAhwIUBAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T19:49:03.795Z",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\appsettings.json",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\appsettings.json",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\appsettings.json",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACMAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-23T15:01:42.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ProductHandlerSylloge.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
-              "RelativeDocumentMoniker": "LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
-              "RelativeToolTip": "LearnBlazorServer\\ProductMediator\\ProductHandlerSylloge.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAhwB4AAAA4AAAA",
+              "Title": "ServiceIdentityConfigurator.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\IdentityServer\\ServiceIdentityConfigurator.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\ServiceIdentityConfigurator.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\IdentityServer\\ServiceIdentityConfigurator.cs",
+              "RelativeToolTip": "IdentityServer\\ServiceIdentityConfigurator.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T19:48:14.579Z"
+              "WhenOpened": "2024-06-23T15:00:51.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GitHubAuthorization.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\IdentityServer\\Authorization\\GitHubAuthorization.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Authorization\\GitHubAuthorization.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\IdentityServer\\Authorization\\GitHubAuthorization.cs",
+              "RelativeToolTip": "IdentityServer\\Authorization\\GitHubAuthorization.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAYwHEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T14:27:10.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Data\\AuthService.cs",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Data\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Data\\AuthService.cs",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Data\\AuthService.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAApwD8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T13:30:58.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuthorizeController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Controllers\\AuthorizeController.cs",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Controllers\\AuthorizeController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Controllers\\AuthorizeController.cs",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Controllers\\AuthorizeController.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAswFkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T13:30:44.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GithubToken.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\GithubToken.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\GithubToken.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\GithubToken.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\GithubToken.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-23T13:12:51.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Layout\\MainLayout.razor",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAWwIgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T15:53:09.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginComponent.razor",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\LoginComponent.razor",
+              "RelativeDocumentMoniker": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\LoginComponent.razor",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\.Net Blazor\\Niunan.LearnBlazor.WebServer\\Pages\\Account\\LoginComponent.razor",
+              "RelativeToolTip": "Niunan.LearnBlazor.WebServer\\Pages\\Account\\LoginComponent.razor",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T08:24:24.256Z",
+              "EditorCaption": ""
             }
           ]
         }

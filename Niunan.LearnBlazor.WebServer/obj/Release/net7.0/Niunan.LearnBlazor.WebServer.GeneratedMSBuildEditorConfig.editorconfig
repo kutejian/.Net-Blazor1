@@ -9,61 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Niunan.LearnBlazor.WebServer
 build_property.RootNamespace = Niunan.LearnBlazor.WebServer
-build_property.ProjectDir = D:\Videos\牛腩原创视频\SP0069.牛腩学Blazor\源码\牛腩学Blazor\Niunan.LearnBlazor.WebServer\
+build_property.ProjectDir = C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Videos\牛腩原创视频\SP0069.牛腩学Blazor\源码\牛腩学Blazor\Niunan.LearnBlazor.WebServer
+build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\.Net Blazor\Niunan.LearnBlazor.WebServer
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/App.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/Category.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnkucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/Counter.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/FileUpload1.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/FileUpload1.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsZVVwbG9hZDEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/Index.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/Test.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/Test.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Shared/SurveyPrompt.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/ViewCategory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0NhdGVnb3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Shared/ErrorModal.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEVycm9yTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/_Imports.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Shared/MainLayout.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-470l5ylxq0
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Shared/NavMenu.razor]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-2qvx4wn3fn
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/Error.cshtml]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Videos/牛腩原创视频/SP0069.牛腩学Blazor/源码/牛腩学Blazor/Niunan.LearnBlazor.WebServer/Pages/_Host.cshtml]
+[C:/Users/Administrator/Desktop/.Net Blazor/Niunan.LearnBlazor.WebServer/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

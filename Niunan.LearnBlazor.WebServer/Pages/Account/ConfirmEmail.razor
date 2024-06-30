@@ -1,0 +1,85 @@
+﻿@page "/confirm-email"
+@using AntDesign;
+@using AutoMapper
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components.Authorization
+@using LearnBlazorDto.Models.Account
+@using System.Security.Claims;
+@using IdentityServer.Model;
+@using EmailServer.Model;
+@inject NavigationManager _navigation
+@inject UserManager<IdentityServer.Model.UserEntity> _userManager
+@inject Utility.FilesService _fileService;
+@inject IMessageService _message
+     
+<h1 >Confirm Email</h1>
+
+@if (!string.IsNullOrEmpty(StatusMessage))
+{
+    <p>@StatusMessage</p>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string Token { get; set; }
+
+
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string Email { get; set; }
+
+
+    private string StatusMessage { get; set; }
+
+    private bool isConfirmed = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !isConfirmed)
+        {
+            await Confirm_EmailAsync();
+            isConfirmed = true;
+        }
+    }
+
+    private async Task Confirm_EmailAsync()
+    {
+        var user = await _userManager.FindByEmailAsync(Email);
+        if (user != null)
+        {
+            var result = await _userManager.ConfirmEmailAsync(user, Token);
+            if (result.Succeeded)
+            {
+
+                await _userManager.AddToRoleAsync(user, "User");
+
+                // 创建用户文件夹和默认图片
+                _fileService.CreateDefaultUserFolder(user.UserPath);
+                StatusMessage = "您的邮箱地址已确认。您现在可以登录到您的帐户 ";
+                // 调用 StateHasChanged 方法触发重新渲染
+                StateHasChanged();
+                await _message.Success(StatusMessage, 10);
+            }
+            else
+            {
+                StatusMessage = "邮箱出错或者已超时,请重新发送邮箱。";
+                // 调用 StateHasChanged 方法触发重新渲染
+                StateHasChanged();
+                await _message.Error(StatusMessage, 10);
+            }
+        }
+        else
+        {
+            StatusMessage = "邮箱出错或者已超时,请重新发送邮箱。";
+            // 调用 StateHasChanged 方法触发重新渲染
+            StateHasChanged();
+            await _message.Error(StatusMessage, 10);
+        }
+    }
+}

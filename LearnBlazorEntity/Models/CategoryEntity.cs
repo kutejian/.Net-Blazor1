@@ -1,10 +1,18 @@
-﻿using SqlSugar;
+﻿using AntDesign;
+using SqlSugar;
 using System.Security.Principal;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnBlazorEntity.Models
 {
     public class CategoryEntity
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        [SugarColumn(IsIgnore = true)]
+        public string _Id { get; set; }
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public int CategoryId { get; set; } = 0;
 

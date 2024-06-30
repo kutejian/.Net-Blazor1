@@ -9,7 +9,9 @@ using LearnBlazorServerMediator.ProductMediator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Quartz.Impl;
 using System.Runtime.CompilerServices;
+using TaskSchedulerQuartz;
 
 
 namespace Utility
@@ -37,6 +39,8 @@ namespace Utility
             services.AddSingleton<FluentValidatorProduct<Product>>();
 
 
+            //注册Github OAuth2.0
+
             //错误日志 文件路径在 Niunan.LearnBlazor.WebServer\bin\Debug\net7.0\Logs
             services.AddLogging(builder => builder.AddFileLogger());
 
@@ -50,6 +54,11 @@ namespace Utility
 
             //添加数据库配置文件
             services.AddSingleton(new SqlSugarHelper(configuration)); // 注册数据库配置
+            services.AddSingleton(new MongoDBHelper(configuration)); // 注册数据库配置
+
+            services.AddSingleton<FilesService>();
+
+            services.AddSingleton<SchedulerService>();
 
             //添加中间件
             services.AddMediatR(cgh =>

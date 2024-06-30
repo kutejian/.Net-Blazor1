@@ -1,0 +1,114 @@
+﻿@page "/Register"
+@inject NavigationManager _navigation
+@using AntDesign;
+@using AutoMapper
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components.Authorization
+@using LearnBlazorDto.Models.Account
+@using System.Security.Claims;
+@using IdentityServer.Model;
+@using EmailServer.Model;
+@inject UserManager<IdentityServer.Model.UserEntity> _userManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject EmailServer.Server.IEmailSender _emailSender;
+@inject IMapper _mapper;
+@inject IMessageService _message
+
+
+<Form Model="@RegisterModel" OnFinish="HandleValidSubmit">
+    <FormItem>
+        <Input @bind-Value="RegisterModel.FirstName" Placeholder="FirstName" />
+
+    </FormItem>
+    <FormItem>
+        <Input @bind-Value="RegisterModel.LastName" Placeholder="LastName" />
+
+    </FormItem>
+    <FormItem>
+        <Input @bind-Value="RegisterModel.Email" Placeholder="Email" />
+
+    </FormItem>
+    <FormItem>
+        <InputPassword @bind-Value="RegisterModel.Password" Placeholder="Password" />
+
+    </FormItem>
+    <FormItem>
+        <Input @bind-Value="RegisterModel.ConfirmPassword" Placeholder="ConfirmPassword" />
+    </FormItem>
+    <FormItem>
+        <Button Type="primary" HtmlType="submit" Loading="@isSubmitting" Disabled="@isSubmitting">发送邮箱</Button>
+    </FormItem>
+</Form>
+
+
+@if (RegisterError != null)
+{
+    <p class="text-danger">@RegisterError</p>
+}
+
+@code {
+    [Parameter]
+    public EventCallback OnRegisterSuccess { get; set; }
+    public UserRegisterModel RegisterModel { get; set; } = new UserRegisterModel();
+    public string RegisterError { get; set; }
+    private bool isSubmitting = false;
+
+    private async Task HandleValidSubmit()
+    {
+        //验证邮箱是否已注册
+        var existingUser = _userManager.FindByEmailAsync(RegisterModel.Email).Result;
+        isSubmitting = true;
+
+        if (existingUser == null)
+        {
+            await ResendConfirmationEmail(RegisterModel);
+            return;
+        }
+        else
+        {
+            if (await _userManager.IsEmailConfirmedAsync(existingUser))
+            {
+                RegisterError = "已经注册成功请前往登录";
+                await _message.Error("已经注册成功请前往登录",3);
+                isSubmitting = false;
+                return;
+            }
+            var result = await _userManager.DeleteAsync(existingUser);
+            await ResendConfirmationEmail(RegisterModel);
+            return;
+        }
+    }
+
+    private async Task ResendConfirmationEmail(UserRegisterModel userEntity)
+    {
+        var user = _mapper.Map<UserEntity>(userEntity);
+        user.UserPath = "" + Guid.NewGuid().ToString("N").Substring(0, 7); //生成随机路径
+        user.AvatarUrl = ""; //默认图片
+        user.RegistrationTimestamp = DateTime.Now; // 记录注册时间戳
+        var result = await _userManager.CreateAsync(user, RegisterModel.Password);
+        if (result.Succeeded)
+        {
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var callbackUrl = _navigation.ToAbsoluteUri($"/confirm-email?token={Uri.EscapeDataString(token)}&email={Uri.EscapeDataString(user.Email)}");
+            var message = new EmailMessage(user.UserName, user.Email, "确 认 您 的 邮 件",
+                $"Please confirm your email by clicking the following link: <a href='{callbackUrl}'>Confirm Email</a>");
+            _emailSender.SendEmailAsync(message);
+
+            
+            //关闭弹窗
+            await OnRegisterSuccess.InvokeAsync();
+            // 显示通知并跳转到登录页面
+            await _message.Success("注册成功，请前往邮箱确认邮箱，后在前往登录",3);
+
+        }
+        else
+        {
+            //关闭弹窗
+            await OnRegisterSuccess.InvokeAsync();
+            await _message.Success("邮箱已验证请前往登录，请勿重复注册",3);
+            //RegisterError = string.Join(", ", result.Errors.Select(e => e.Description));
+        }
+        isSubmitting = false;
+    }
+
+}

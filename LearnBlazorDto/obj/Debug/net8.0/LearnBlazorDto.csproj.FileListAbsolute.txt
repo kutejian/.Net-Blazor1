@@ -1,0 +1,16 @@
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.sourcelink.json
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\bin\Debug\net8.0\LearnBlazorDto.deps.json
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\bin\Debug\net8.0\LearnBlazorDto.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\bin\Debug\net8.0\LearnBlazorDto.pdb
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\bin\Debug\net8.0\LearnBlazorEntity.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\bin\Debug\net8.0\LearnBlazorEntity.pdb
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBla.17F34A0E.Up2Date
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\refint\LearnBlazorDto.dll
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\LearnBlazorDto.pdb
+C:\Users\Administrator\Desktop\.Net Blazor\LearnBlazorDto\obj\Debug\net8.0\ref\LearnBlazorDto.dll

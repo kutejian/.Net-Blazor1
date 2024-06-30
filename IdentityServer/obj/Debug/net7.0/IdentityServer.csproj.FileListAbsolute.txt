@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\bin\Debug\net7.0\IdentityServer.deps.json
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\bin\Debug\net7.0\IdentityServer.dll
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\bin\Debug\net7.0\IdentityServer.pdb
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.sourcelink.json
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.dll
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\refint\IdentityServer.dll
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.pdb
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\ref\IdentityServer.dll
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\bin\Debug\net7.0\IdentityServer.runtimeconfig.json
+C:\Users\Administrator\Desktop\.Net Blazor\IdentityServer\obj\Debug\net7.0\IdentityServer.genruntimeconfig.cache
